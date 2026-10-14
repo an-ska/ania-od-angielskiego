@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+.venv/
+
+# local image tooling
+/public/ania-source.jpg
 
 # debug
 npm-debug.log*

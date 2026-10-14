@@ -2,25 +2,59 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2a24;
+  --cream: #f7f4ec;
+  --mint: #f3f7f4;
+  --sage: #c3ddd0;
+  --sage-bright: #9fd5bc;
+  --cobalt: #0c58fc;
+  --green: #3f9a72;
+  --forest: #2f5d48;
+  --muted: #5b6660;
+  --yellow: #fcd968;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-mint: var(--mint);
+  --color-sage: var(--sage);
+  --color-sage-bright: var(--sage-bright);
+  --color-cobalt: var(--cobalt);
+  --color-green: var(--green);
+  --color-forest: var(--forest);
+  --color-muted: var(--muted);
+  --color-yellow: var(--yellow);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-fraunces);
+  --font-hand: var(--font-caveat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
+
+::selection {
+  background: color-mix(in srgb, var(--cobalt) 22%, white);
+  color: var(--foreground);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
