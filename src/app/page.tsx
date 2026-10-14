@@ -211,43 +211,51 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
       <main>
-        <section className="relative overflow-hidden bg-[#f7f4ec] pt-28 sm:pt-32 lg:pt-36">
+        <section
+          className="relative overflow-hidden pt-28 text-[#2b3a32] sm:pt-32 lg:pt-36"
+          style={{
+            backgroundColor: "#dcd0e5",
+            backgroundImage:
+              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+            backgroundSize: "15px 15px",
+          }}
+        >
           <header className="absolute inset-x-0 top-4 z-30 px-4 sm:top-5 sm:px-6">
-            <div className="mx-auto flex max-w-[896px] items-center justify-between gap-4 rounded-full bg-white px-5 py-3 shadow-[0_8px_30px_rgba(31,42,36,0.06)] sm:px-7">
+            <div className="mx-auto flex max-w-[896px] items-center justify-between gap-4 rounded-full bg-white/90 px-5 py-3 shadow-[0_8px_30px_rgba(31,42,36,0.06)] backdrop-blur-sm sm:px-7">
               <Link
                 href="/"
-                className="font-display text-xl font-bold tracking-tight text-[#2f5d48] transition-opacity hover:opacity-80"
+                className="font-display text-xl font-bold tracking-tight text-[#3b5249] transition-opacity hover:opacity-80"
               >
                 Ania
               </Link>
-              <nav className="hidden items-center gap-7 text-[15px] font-medium text-[#2f5d48] md:flex">
+              <nav className="hidden items-center gap-7 text-[15px] font-medium text-[#3b5249] md:flex">
                 <a
                   href="#oferta"
-                  className="transition-colors hover:text-green"
+                  className="transition-colors hover:text-[#2b3a32]"
                 >
                   Oferta
                 </a>
                 <a
                   href="#lekcje"
-                  className="transition-colors hover:text-green"
+                  className="transition-colors hover:text-[#2b3a32]"
                 >
                   Lekcje
                 </a>
                 <a
                   href="#o-mnie"
-                  className="transition-colors hover:text-green"
+                  className="transition-colors hover:text-[#2b3a32]"
                 >
                   O mnie
                 </a>
                 <a
                   href="#opinie"
-                  className="transition-colors hover:text-green"
+                  className="transition-colors hover:text-[#2b3a32]"
                 >
                   Opinie
                 </a>
                 <a
                   href="#kontakt"
-                  className="transition-colors hover:text-green"
+                  className="transition-colors hover:text-[#2b3a32]"
                 >
                   Kontakt
                 </a>
@@ -258,7 +266,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="flex size-10 items-center justify-center rounded-full text-[#2f5d48] transition-colors hover:bg-sage/40 hover:text-cobalt"
+                  className="flex size-10 items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32]"
                 >
                   <svg viewBox="0 0 24 24" className="block size-5" fill="currentColor" aria-hidden>
                     <path d="M14 8.2h2.2V5.1c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7H6.3v3.4h2.4V22h3.5v-6.1h2.7l.4-3.4h-3.1v-2.3c0-1 .3-1.7 1.8-1.7z" />
@@ -269,7 +277,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Profil na e-korepetycje.net"
-                  className="flex size-10 items-center justify-center rounded-full text-[#2f5d48] transition-colors hover:bg-sage/40 hover:text-cobalt"
+                  className="flex size-10 items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32]"
                 >
                   <svg viewBox="0 0 24 24" className="block size-5" fill="currentColor" aria-hidden>
                     <path d="M12 4.2C10 2.9 7.4 2.2 4.5 2.2c-1 0-1.9.1-2.8.4-.7.2-1.1.8-1.1 1.5v13.6c0 .9.8 1.5 1.6 1.3 1-.2 2-.3 3-.3 2.1 0 4.1.6 5.8 1.8.3.2.7.2 1 0 1.7-1.2 3.7-1.8 5.8-1.8 1 0 2 .1 3 .3.8.2 1.6-.4 1.6-1.3V4.1c0-.7-.4-1.3-1.1-1.5-.9-.3-1.8-.4-2.8-.4-2.9 0-5.5.7-7.5 2zm0 2.3c1.6-1 3.6-1.5 5.7-1.5.8 0 1.5.1 2.2.2v11.6c-.8-.1-1.6-.2-2.4-.2-1.9 0-3.7.5-5.5 1.4V6.5zm-1.5 11.5c-1.8-.9-3.6-1.4-5.5-1.4-.8 0-1.6.1-2.4.2V5.2c.7-.1 1.4-.2 2.2-.2 2.1 0 4.1.5 5.7 1.5v11.5z" />
@@ -279,37 +287,38 @@ export default function Home() {
             </div>
           </header>
 
-          <div className="relative mx-auto grid max-w-[1200px] items-center gap-10 px-6 pb-10 md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:pb-6">
-            <div className="max-w-xl">
-              <span className="inline-block rounded-full bg-sage-bright/70 px-3.5 py-1.5 text-sm font-medium text-[#2f5d48]">
+          <div className="relative mx-auto flex max-w-[1040px] flex-wrap items-center gap-3 px-5 pb-16 sm:px-6 md:flex-nowrap md:gap-0 md:pb-20">
+            <div className="z-[2] min-w-[280px] shrink-0 text-center md:w-1/2 md:max-w-none md:pr-4 md:text-left">
+              <span className="mb-6 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-2 text-[15px] font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
                 Angielski online
               </span>
-              <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight text-[#2f5d48] md:text-6xl">
+              <h1 className="mb-6 font-display text-[clamp(2.75rem,6vw,3.75rem)] font-bold leading-[1.08] tracking-tight text-[#263830]">
                 Ania od angielskiego
               </h1>
-              <p className="mt-5 max-w-md text-lg leading-relaxed text-[#2f5d48]/80">
+              <p className="mx-auto mb-9 max-w-[520px] text-[1.125rem] leading-[1.65] text-[#4a5c53] sm:text-[1.2rem] md:mx-0">
                 Angielski dla uczniów i dorosłych: od szkolnych zaległości i
                 egzaminów po swobodną komunikację i odkrywanie języka na własnych
                 zasadach.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-5">
+              <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
                 <a
                   href="#kontakt"
-                  className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-[#2f5d48] px-6 py-3.5 font-medium text-white transition-transform hover:scale-[1.02] active:scale-[0.97]"
+                  className="inline-flex items-center whitespace-nowrap rounded-[30px] bg-[#3b5249] px-8 py-4 text-base font-medium text-white shadow-[0_4px_10px_rgba(59,82,73,0.2)] transition-colors hover:bg-[#2b3a32]"
                 >
                   Umów lekcję
-                  <span aria-hidden>→</span>
                 </a>
                 <a
                   href="#oferta"
-                  className="font-medium text-[#2f5d48] underline decoration-[#2f5d48]/30 underline-offset-4 transition-colors hover:decoration-[#2f5d48]"
+                  className="inline-flex items-center whitespace-nowrap rounded-[30px] border border-[#3b5249] bg-transparent px-8 py-4 text-base font-medium text-[#3b5249] transition-colors hover:bg-[rgba(59,82,73,0.05)]"
                 >
                   Poznaj ofertę
                 </a>
               </div>
             </div>
 
-            <HeroCollage variant="doodle" />
+            <div className="min-w-[280px] flex-1 md:min-w-0">
+              <HeroCollage variant="doodle" />
+            </div>
           </div>
         </section>
 

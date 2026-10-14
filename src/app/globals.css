@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #1f2a24;
   --cream: #f7f4ec;
+  --lavender: #dcd0e5;
   --mint: #f3f7f4;
   --sage: #c3ddd0;
   --sage-bright: #9fd5bc;
@@ -12,12 +13,14 @@
   --forest: #2f5d48;
   --muted: #5b6660;
   --yellow: #fcd968;
+  --dusty-blue: #9cb4bc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-cream: var(--cream);
+  --color-lavender: var(--lavender);
   --color-mint: var(--mint);
   --color-sage: var(--sage);
   --color-sage-bright: var(--sage-bright);
@@ -26,6 +29,7 @@
   --color-forest: var(--forest);
   --color-muted: var(--muted);
   --color-yellow: var(--yellow);
+  --color-dusty-blue: var(--dusty-blue);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-fraunces);
   --font-hand: var(--font-caveat);
