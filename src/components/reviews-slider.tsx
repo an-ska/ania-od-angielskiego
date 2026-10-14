@@ -9,42 +9,36 @@ export type Review = {
 
 const themes = [
   {
-    bubble: "#d4eee3",
-    quote: "#2f7a58",
-    star: "#3f9a72",
-    avatar: "#3f9a72",
-    ring: "#9fd5bc",
+    bubble: "#f4efe6",
+    quoteMark: "#d9785a",
+    star: "#d9785a",
+    avatar: "#3b5249",
+    ring: "rgba(59, 82, 73, 0.18)",
   },
   {
-    bubble: "#fff0b8",
-    quote: "#b8920e",
-    star: "#d4a017",
-    avatar: "#d4a017",
-    ring: "#fcd968",
+    bubble: "#f4efe6",
+    quoteMark: "#cbb9d8",
+    star: "#d9785a",
+    avatar: "#5a6b62",
+    ring: "rgba(203, 185, 216, 0.55)",
   },
   {
-    bubble: "#d6e0ff",
-    quote: "#0a4ad6",
-    star: "#0c58fc",
-    avatar: "#0c58fc",
-    ring: "#9bb8ff",
+    bubble: "#f4efe6",
+    quoteMark: "#9cb4bc",
+    star: "#d9785a",
+    avatar: "#2b3a32",
+    ring: "rgba(156, 180, 188, 0.45)",
   },
-] as const;
-
-const radii = [
-  "2.4rem 2.8rem 2.5rem 2.7rem",
-  "2.7rem 2.3rem 2.8rem 2.4rem",
-  "2.5rem 2.6rem 2.4rem 2.9rem",
 ] as const;
 
 function Stars({ color }: { color: string }) {
   return (
-    <div className="mt-5 flex shrink-0 gap-1.5" aria-label="Ocena 5 na 5">
+    <div className="mt-5 flex shrink-0 gap-1" aria-label="Ocena 5 na 5">
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
           viewBox="0 0 20 20"
-          className="size-6 sm:size-7"
+          className="size-5 sm:size-6"
           fill={color}
           aria-hidden
         >
@@ -58,49 +52,36 @@ function Stars({ color }: { color: string }) {
 function ReviewCard({
   review,
   theme,
-  radius,
 }: {
   review: Review;
   theme: (typeof themes)[number];
-  radius: string;
 }) {
   const initial = review.author.trim().charAt(0).toUpperCase();
 
   return (
     <figure className="flex h-full min-w-0 flex-col">
-      {/* Bubble grows with content — no stretched SVG clipping text */}
-      <div className="relative flex-1 pb-4 pt-7 sm:pt-8">
+      <div className="relative flex-1 pt-6">
         <span
-          className="pointer-events-none absolute left-3 top-0 z-[2] font-display text-[8.5rem] leading-none select-none sm:left-4 sm:top-0 sm:text-[10rem]"
-          style={{ color: theme.quote, opacity: 0.9 }}
+          className="pointer-events-none absolute left-4 top-0 z-[2] font-display text-[5.5rem] leading-none select-none sm:left-5 sm:text-[6.5rem]"
+          style={{ color: theme.quoteMark, opacity: 0.85 }}
           aria-hidden
         >
           “
         </span>
         <div
-          className="relative z-[1] flex h-full flex-col px-7 pb-8 pt-10 sm:px-8 sm:pb-9 sm:pt-12"
-          style={{
-            backgroundColor: theme.bubble,
-            borderRadius: radius,
-          }}
+          className="relative z-[1] flex h-full flex-col rounded-2xl border border-[rgba(59,82,73,0.08)] px-6 pb-7 pt-10 shadow-[0_6px_18px_rgba(43,58,50,0.08)] sm:px-7 sm:pb-8 sm:pt-11"
+          style={{ backgroundColor: theme.bubble }}
         >
-          <blockquote className="relative z-[1] flex-1 text-left text-[0.95rem] leading-relaxed text-foreground/90 sm:text-[1rem]">
+          <blockquote className="relative z-[1] flex-1 text-left text-[0.95rem] leading-relaxed text-[#4a5c53] sm:text-[15px]">
             {review.quote}
           </blockquote>
           <Stars color={theme.star} />
         </div>
-
-        {/* Tail attached to bubble */}
-        <span
-          className="absolute bottom-1.5 left-10 z-0 block size-5 rotate-45 rounded-[2px]"
-          style={{ backgroundColor: theme.bubble }}
-          aria-hidden
-        />
       </div>
 
-      <figcaption className="mt-3 flex items-center gap-3 pl-4">
+      <figcaption className="mt-4 flex items-center gap-3 pl-1">
         <span
-          className="flex size-11 shrink-0 items-center justify-center rounded-full text-base font-bold text-white"
+          className="flex size-10 shrink-0 items-center justify-center rounded-full font-display text-base font-bold text-[#f4efe6]"
           style={{
             backgroundColor: theme.avatar,
             boxShadow: `0 0 0 3px ${theme.ring}`,
@@ -109,7 +90,7 @@ function ReviewCard({
         >
           {initial}
         </span>
-        <p className="font-display text-lg font-semibold tracking-tight text-foreground">
+        <p className="font-display text-lg font-semibold tracking-tight text-[#263830]">
           {review.author}
         </p>
       </figcaption>
@@ -145,7 +126,7 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
     <div>
       <div
         key={safePage}
-        className="grid animate-[fade-up_0.35s_ease-out] items-stretch gap-6 sm:gap-8"
+        className="grid animate-[fade-up_0.35s_ease-out] items-stretch gap-6 sm:gap-7"
         style={{
           gridTemplateColumns:
             perPage === 1 ? "1fr" : "repeat(3, minmax(0, 1fr))",
@@ -156,7 +137,6 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
             key={`${start + i}-${review.author}`}
             review={review}
             theme={themes[(start + i) % themes.length]}
-            radius={radii[(start + i) % radii.length]}
           />
         ))}
       </div>
@@ -172,13 +152,13 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
               onClick={() => setPage(i)}
               className={`size-3 rounded-full transition-colors sm:size-3.5 ${
                 i === safePage
-                  ? "border border-cobalt bg-cobalt"
-                  : "border border-foreground/70 bg-transparent hover:border-foreground"
+                  ? "border border-[#3b5249] bg-[#3b5249]"
+                  : "border border-[rgba(59,82,73,0.35)] bg-transparent hover:border-[#3b5249]"
               }`}
             />
           ))}
         </div>
-        <p className="text-sm text-muted">
+        <p className="text-sm text-[#5a6b62]">
           {safePage + 1} / {pageCount}
         </p>
       </div>

@@ -9,16 +9,7 @@ const offerItems = [
     description:
       "Pomagam uporządkować materiał, zrozumieć gramatykę i nadrobić zaległości. Pracujemy nad tym, co sprawia trudność i przygotowujemy się do sprawdzianów.",
     audience: "Dla uczniów, którzy potrzebują regularnego wsparcia w nauce.",
-    icon: "book",
-  },
-  {
-    title: "Egzaminy pod kontrolą",
-    subtitle: "Egzamin ósmoklasisty i matura podstawowa",
-    description:
-      "Przygotowujemy się krok po kroku: powtarzamy najważniejsze zagadnienia, rozwiązujemy zadania egzaminacyjne i ćwiczymy strategie, które pomagają lepiej wykorzystać wiedzę podczas egzaminu. Skupiamy się na słabszych obszarach i regularnie sprawdzamy postępy.",
-    audience:
-      "Dla ósmoklasistów i maturzystów przygotowujących się do poziomu podstawowego.",
-    icon: "exam",
+    graphic: "/offer-school.png?v=soft",
   },
   {
     title: "Angielski od pierwszych kroków",
@@ -27,7 +18,16 @@ const offerItems = [
       "Zaczynamy od tego, co już wiesz, i spokojnie budujemy kolejne umiejętności. Poznajemy przydatne słownictwo, uczymy się tworzyć zdania i oswajamy z mówieniem.",
     audience:
       "Dla początkujących, osób wracających do nauki i dorosłych, którzy chcą zacząć od podstaw.",
-    icon: "steps",
+    graphic: "/offer-first-steps.png?v=soft",
+  },
+  {
+    title: "Egzaminy pod kontrolą",
+    subtitle: "Egzamin ósmoklasisty i matura podstawowa",
+    description:
+      "Powtarzamy najważniejsze zagadnienia, rozwiązujemy zadania egzaminacyjne i ćwiczymy strategie, które pomagają lepiej wykorzystać wiedzę podczas egzaminu. Skupiamy się na słabszych obszarach i regularnie sprawdzamy postępy.",
+    audience:
+      "Dla ósmoklasistów i maturzystów przygotowujących się do poziomu podstawowego.",
+    graphic: "/offer-exams.png?v=soft",
   },
   {
     title: "Angielski w praktyce",
@@ -36,59 +36,22 @@ const offerItems = [
       "Chcesz poradzić sobie na lotnisku, zameldować się w hotelu, zamówić jedzenie lub swobodniej rozmawiać z innymi? Ćwiczymy konkretne sytuacje, przydatne zwroty i dialogi, które pomagają przełamać barierę językową.",
     audience:
       "Dla młodzieży i dorosłych, którzy chcą wykorzystywać angielski w codziennych sytuacjach.",
-    icon: "chat",
+    graphic: "/offer-practice.png?v=soft",
   },
   {
     title: "Angielski z ciekawości",
     subtitle: "Więcej niż szkolny podręcznik",
     description:
-      "Angielski to znacznie więcej niż gramatyka i listy słówek! Odkrywamy idiomy, nietypowe wyrażenia, język filmów i piosenek, ciekawostki kulturowe oraz zwyczaje krajów anglojęzycznych. Rozwijamy słownictwo, bawimy się językiem i poznajemy go z zupełnie innej strony.",
+      "Odkrywamy idiomy, nietypowe wyrażenia, język filmów i piosenek, ciekawostki kulturowe oraz zwyczaje krajów anglojęzycznych. Rozwijamy słownictwo, bawimy się językiem i poznajemy go z zupełnie innej strony.",
     audience:
       "Dla ciekawych świata uczniów oraz dorosłych, którzy chcą rozwijać angielski dla przyjemności.",
-    icon: "spark",
+    graphics: [
+      "/offer-curiosity-compass.png",
+      "/offer-curiosity-book.png",
+    ] as const,
+    wide: true,
   },
 ] as const;
-
-function OfferIcon({ name }: { name: (typeof offerItems)[number]["icon"] }) {
-  const common = {
-    fill: "none" as const,
-    stroke: "currentColor",
-    strokeWidth: 1.8,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  };
-
-  return (
-    <svg viewBox="0 0 24 24" className="size-6" aria-hidden {...common}>
-      {name === "book" && (
-        <path d="M4 19V6.5A2.5 2.5 0 0 1 6.5 4H12v15.5M12 4h5.5A2.5 2.5 0 0 1 20 6.5V19l-8-2.5L4 19z" />
-      )}
-      {name === "exam" && (
-        <>
-          <path d="M8 3.5h8v3H8z" />
-          <path d="M7 6.5h10v14H7z" />
-          <path d="M10 11h4M10 14.5h4M10 18h2.5" />
-        </>
-      )}
-      {name === "steps" && (
-        <>
-          <path d="M7 16.5c1.2 0 2-.9 2-2s-.8-2-2-2-2 .9-2 2 .8 2 2 2z" />
-          <path d="M15.5 11c1.2 0 2-.9 2-2s-.8-2-2-2-2 .9-2 2 .8 2 2 2z" />
-          <path d="M9.2 14.2 13.8 10" />
-        </>
-      )}
-      {name === "chat" && (
-        <>
-          <path d="M5 6.5h9.5A2.5 2.5 0 0 1 17 9v4.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3V6.5z" />
-          <path d="M17 9.5h1.5A2.5 2.5 0 0 1 21 12v3.5A2.5 2.5 0 0 1 18.5 18H17" />
-        </>
-      )}
-      {name === "spark" && (
-        <path d="m12 3.2 2.2 5.4 5.8.4-4.5 3.7 1.5 5.6L12 15.4 7 18.3l1.5-5.6-4.5-3.7 5.8-.4L12 3.2z" />
-      )}
-    </svg>
-  );
-}
 
 const lessonApproachItems = [
   {
@@ -230,6 +193,12 @@ export default function Home() {
               </Link>
               <nav className="hidden items-center gap-7 text-[15px] font-medium text-[#3b5249] md:flex">
                 <a
+                  href="#o-mnie"
+                  className="transition-colors hover:text-[#2b3a32]"
+                >
+                  O mnie
+                </a>
+                <a
                   href="#oferta"
                   className="transition-colors hover:text-[#2b3a32]"
                 >
@@ -240,12 +209,6 @@ export default function Home() {
                   className="transition-colors hover:text-[#2b3a32]"
                 >
                   Lekcje
-                </a>
-                <a
-                  href="#o-mnie"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  O mnie
                 </a>
                 <a
                   href="#opinie"
@@ -322,11 +285,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="oferta" className="relative scroll-mt-24 overflow-visible bg-white">
+        <section
+          id="o-mnie"
+          className="relative scroll-mt-24 overflow-visible px-5 pb-16 pt-10 text-[#2b3a32] sm:px-6 sm:pb-20 sm:pt-14"
+          style={{ backgroundColor: "#f3f7f4" }}
+        >
           <svg
             viewBox="0 0 1440 48"
             preserveAspectRatio="none"
-            className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full text-white sm:-top-12 sm:h-14"
+            className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full sm:-top-12 sm:h-14"
+            style={{ color: "#f3f7f4" }}
             aria-hidden
           >
             <path
@@ -334,70 +302,183 @@ export default function Home() {
               fill="currentColor"
             />
           </svg>
-          <div className="relative mx-auto max-w-[1200px] px-6 pb-16 pt-10 sm:pb-20 sm:pt-14">
-            <div
-              className="pointer-events-none absolute -left-[4%] top-10 size-36 rounded-full bg-sage-bright/50 sm:size-48"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute right-[3%] top-16 size-20 rounded-full bg-sage/70 sm:size-28"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute right-[16%] top-40 size-3 rounded-full bg-foreground sm:size-3.5"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute left-[12%] top-36 size-5 rounded-full bg-green sm:size-6"
-              aria-hidden
-            />
-
-            <div className="relative text-center">
-              <h2 className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-bold tracking-tight">
-                Oferta
-              </h2>
-              <div
-                className="mx-auto mt-3 h-1.5 w-14 rounded-full bg-sage-bright"
-                aria-hidden
-              />
-              <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-foreground/80">
-              Niezależnie od tego, czy chcesz poprawić oceny, przygotować się do egzaminu, zacząć naukę od podstaw, czy rozwinąć swoje umiejętności językowe, znajdziesz tu coś dla siebie.
-              </p>
-            </div>
-
-            <ol className="relative mx-auto mt-14 grid max-w-4xl gap-10 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-12">
-              {offerItems.map((item, index) => (
-                <li key={item.title} className="text-left">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-sage-bright/70 text-[#2f5d48]">
-                      <OfferIcon name={item.icon} />
-                    </span>
-                    <span className="font-display text-sm font-semibold tracking-wide text-cobalt">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-base font-medium text-green">
-                    {item.subtitle}
-                  </p>
-                  <p className="mt-3 text-base leading-relaxed text-foreground/75 sm:text-lg">
-                    {item.description}
-                  </p>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground/55">
-                    {item.audience}
-                  </p>
+          <div className="relative mx-auto max-w-[720px] text-center">
+            <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)]">
+              Poznaj mnie
+            </span>
+            <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
+              O mnie
+            </h2>
+            <p className="mt-8 font-display text-[clamp(1.75rem,3.5vw,2.25rem)] font-bold leading-snug tracking-tight text-[#263830]">
+              Cześć, jestem Ania!
+            </p>
+            <p className="mt-5 text-base leading-relaxed text-[#4a5c53] sm:text-[1.125rem] sm:leading-[1.65]">
+              Na co dzień jestem żoną, mamą oraz programistką frontend, a z
+              wykształcenia magistrem filologii angielskiej ze specjalnością
+              nauczycielską. Ukończyłam studia na Uniwersytecie Opolskim. Mam
+              ponad 10 lat doświadczenia w nauczaniu. Prowadzę lekcje
+              indywidualne, a wcześniej pracowałam też w szkole językowej. Dzięki
+              temu, że znam świat technologii i kodu, potrafię tłumaczyć rzeczy
+              logicznie i klarownie.
+            </p>
+            <p className="mt-7 font-display text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold leading-snug tracking-tight text-[#d9785a]">
+              Pomogę Ci odkryć, co już potrafisz, uporządkować to, co sprawia
+              trudność, i zrobić kolejny krok.
+            </p>
+            <ul className="mt-10 flex flex-wrap justify-center gap-3">
+              {[
+                "magister filologii angielskiej",
+                "lektorka w szkole językowej",
+                "+10 lat doświadczenia",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="rounded-[20px] border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] px-5 py-2.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)] sm:px-6 sm:py-3 sm:text-[15px]"
+                >
+                  {item}
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         </section>
 
-        <SectionDivider from="#ffffff" to="#f3f7f4" />
+        <section
+          id="oferta"
+          className="relative scroll-mt-24 overflow-visible px-5 pb-16 pt-10 text-[#2b3a32] sm:px-6 sm:pb-20 sm:pt-14"
+          style={{
+            backgroundColor: "#dcd0e5",
+            backgroundImage:
+              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+            backgroundSize: "15px 15px",
+          }}
+        >
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full sm:-top-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
+            />
+          </svg>
+          <div className="relative mx-auto max-w-[1140px]">
+            <div className="mb-12 text-center sm:mb-14">
+              <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)]">
+                Co możemy razem zrobić?
+              </span>
+              <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
+                Oferta
+              </h2>
+            </div>
 
-        <section id="lekcje" className="scroll-mt-24 overflow-hidden bg-mint">
-          <div className="relative mx-auto max-w-[1200px] px-6 py-16 sm:py-20">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-7">
+              {offerItems.map((item) => {
+                const graphic =
+                  "graphic" in item ? item.graphic : undefined;
+                const graphics =
+                  "graphics" in item ? item.graphics : undefined;
+                const wide = "wide" in item && item.wide;
+
+                if (graphics) {
+                  const [leftGraphic, rightGraphic] = graphics;
+                  return (
+                    <article
+                      key={item.title}
+                      className="flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] px-5 py-6 shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)] sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-[820px] sm:flex-row sm:items-center sm:gap-3 sm:px-5 sm:py-5"
+                    >
+                      <div className="flex w-full items-start justify-center gap-6 sm:contents">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={leftGraphic}
+                          alt=""
+                          aria-hidden
+                          className="w-[38%] max-w-[150px] shrink-0 object-contain sm:w-[150px] sm:self-center"
+                        />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`${rightGraphic}?v=2`}
+                          alt=""
+                          aria-hidden
+                          className="w-[38%] max-w-[150px] shrink-0 object-contain sm:order-3 sm:w-[150px] sm:self-center"
+                        />
+                      </div>
+                      <div className="min-w-0 flex-1 text-center sm:order-2">
+                        <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] sm:text-[1.75rem]">
+                          {item.title}
+                        </h3>
+                        <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] sm:text-[1.0625rem]">
+                          {item.subtitle}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-[#4a5c53] sm:text-[15px]">
+                          {item.description}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-[#5a6b62]">
+                          {item.audience}
+                        </p>
+                      </div>
+                    </article>
+                  );
+                }
+
+                return (
+                  <article
+                    key={item.title}
+                    className={`flow-root rounded-2xl border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] p-5 shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)] sm:p-6 ${
+                      wide
+                        ? "sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-[780px]"
+                        : ""
+                    }`}
+                  >
+                    {graphic ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={graphic}
+                        alt=""
+                        aria-hidden
+                        className="float-left mb-1 mr-4 w-[min(48%,200px)] object-contain max-sm:float-none max-sm:mx-auto max-sm:mb-4 max-sm:block max-sm:w-[72%]"
+                        style={{
+                          shapeOutside: `url("${graphic}")`,
+                          shapeMargin: "0.85rem",
+                          shapeImageThreshold: 0.2,
+                        }}
+                      />
+                    ) : null}
+                    <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] max-sm:text-center sm:text-[1.75rem]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] max-sm:text-center sm:text-[1.0625rem]">
+                      {item.subtitle}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-[#4a5c53] max-sm:text-center sm:text-[15px]">
+                      {item.description}
+                    </p>
+                    <p className="mt-3 clear-both text-sm leading-relaxed text-[#5a6b62] max-sm:text-center">
+                      {item.audience}
+                    </p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -bottom-10 left-0 z-[1] h-12 w-full rotate-180 sm:-bottom-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
+            />
+          </svg>
+        </section>
+
+        <section id="lekcje" className="relative scroll-mt-24 overflow-visible bg-mint">
+          <div className="relative mx-auto max-w-[1200px] px-6 pb-16 pt-20 sm:pb-20 sm:pt-24">
             <div
               className="pointer-events-none absolute -right-[4%] top-8 size-36 rounded-full bg-sage-bright/70 sm:size-48"
               aria-hidden
@@ -446,108 +527,61 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="o-mnie" className="scroll-mt-24 overflow-hidden bg-mint">
-          <div className="relative mx-auto max-w-[1200px] px-6 py-16 text-center sm:py-20">
-            <div
-              className="pointer-events-none absolute -left-[4%] top-8 size-36 rounded-full bg-sage-bright/70 sm:size-48"
-              aria-hidden
+        <section
+          id="opinie"
+          className="relative scroll-mt-24 overflow-visible px-5 pb-16 pt-10 text-[#2b3a32] sm:px-6 sm:pb-20 sm:pt-14"
+          style={{
+            backgroundColor: "#dcd0e5",
+            backgroundImage:
+              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+            backgroundSize: "15px 15px",
+          }}
+        >
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full sm:-top-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
             />
-            <div
-              className="pointer-events-none absolute right-[4%] top-16 size-20 rounded-full bg-sage sm:size-28"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-14 right-[8%] size-3 rounded-full bg-foreground sm:size-3.5"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-24 left-[10%] size-5 rounded-full bg-green sm:size-6"
-              aria-hidden
-            />
-
-            <div className="relative mx-auto max-w-2xl">
-              <h2 className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-bold tracking-tight">
-                O mnie
-              </h2>
-              <div
-                className="mx-auto mt-3 h-1.5 w-14 rounded-full bg-sage-bright"
-                aria-hidden
-              />
-              <p className="mt-8 font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.1] tracking-tight text-foreground">
-                Cześć, jestem Ania!
-              </p>
-              <p className="mt-6 text-xl leading-relaxed text-foreground sm:text-[1.35rem]">
-                Jestem magistrem filologii angielskiej ze specjalnością
-                nauczycielską - skończyłam studia na Uniwersytecie Opolskim. Mam
-                ponad 10 lat doświadczenia w nauczaniu. Prowadzę lekcje
-                indywidualne, a wcześniej pracowałam też w szkole językowej.
-              </p>
-              <p className="mt-8 font-display text-[clamp(1.35rem,2.5vw,1.75rem)] font-semibold leading-snug tracking-tight text-cobalt">
-                Pomogę Ci odkryć, co już potrafisz, uporządkować to, co sprawia
-                trudność, i zrobić kolejny krok.
-              </p>
-              <ul className="mt-10 flex flex-wrap justify-center gap-3">
-                {[
-                  "magister filologii angielskiej",
-                  "lektorka w szkole językowej",
-                  "+10 lat doświadczenia",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full bg-white px-5 py-2.5 text-base font-semibold text-foreground ring-4 ring-sage-bright sm:px-6 sm:py-3 sm:text-lg"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <SectionDivider from="#f3f7f4" to="#ffffff" />
-
-        <section id="opinie" className="scroll-mt-24 overflow-hidden bg-white">
-          <div className="relative mx-auto max-w-[1200px] px-6 py-16 sm:py-20">
-            <div
-              className="pointer-events-none absolute -right-[5%] top-6 size-40 rounded-full bg-sage-bright/50 sm:size-52"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -left-[4%] top-28 size-24 rounded-full bg-sage/70 sm:top-32 sm:size-32"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute right-[14%] top-36 size-3.5 rounded-full bg-green sm:top-40 sm:size-4"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute left-[18%] top-20 size-2.5 rounded-full bg-foreground sm:size-3"
-              aria-hidden
-            />
-
-            <div className="relative text-center">
-              <h2 className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-bold tracking-tight">
+          </svg>
+          <div className="relative mx-auto max-w-[1140px]">
+            <div className="mb-12 text-center sm:mb-14">
+              <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)]">
+                Opinie kursantów
+              </span>
+              <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
                 Co mówią o mnie kursanci?
               </h2>
-              <div
-                className="mx-auto mt-3 h-1.5 w-14 rounded-full bg-sage-bright"
-                aria-hidden
-              />
-              <p className="mt-4 text-lg leading-relaxed text-muted">
+              <p className="mt-3 text-base font-semibold text-[#d9785a] sm:text-[1.0625rem]">
                 13 opinii · 5/5
               </p>
             </div>
 
-            <div className="relative mt-12">
+            <div className="relative">
               <ReviewsSlider reviews={reviews} />
             </div>
           </div>
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -bottom-10 left-0 z-[1] h-12 w-full rotate-180 sm:-bottom-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
+            />
+          </svg>
         </section>
 
-        <SectionDivider from="#ffffff" to="#f3f7f4" />
-
-        <section id="kontakt" className="scroll-mt-24 overflow-hidden bg-mint">
-          <div className="relative mx-auto max-w-[1200px] px-6 py-16 text-center sm:py-20">
+        <section id="kontakt" className="relative scroll-mt-24 overflow-visible bg-mint">
+          <div className="relative mx-auto max-w-[1200px] px-6 pb-16 pt-20 text-center sm:pb-20 sm:pt-24">
             <div
               className="pointer-events-none absolute -right-[3%] top-10 size-36 rounded-full bg-sage-bright/70 sm:size-48"
               aria-hidden
