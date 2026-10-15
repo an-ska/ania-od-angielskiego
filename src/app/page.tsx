@@ -57,29 +57,47 @@ const lessonApproachItems = [
   {
     title: "Nauka bez stresu i oceniania",
     description:
-      "Błędy są naturalną częścią nauki. Można pytać, prosić o kolejne wyjaśnienie i wracać do trudniejszych zagadnień. Zależy mi na tym, żeby uczeń czuł się swobodnie i nie bał się używać języka.",
+      "Błędy są naturalną częścią nauki. Na zajęciach można śmiało pytać, prosić o ponowne wyjaśnienie i wracać do trudniejszych zagadnień. Zależy mi na tym, żeby uczeń czuł się swobodnie i nie bał się używać języka.",
+    pill: "Bez stresu",
+    badge: "pill-lavender",
   },
   {
     title: "Podejście dopasowane do ucznia",
     description:
-      "Każdy ma inne potrzeby, tempo pracy i cele. Dobieram materiały oraz ćwiczenia do poziomu ucznia i tego, nad czym aktualnie pracujemy. Mam też doświadczenie w pracy z dyslektykami.",
-  },
-  {
-    title: "Regularny feedback dla rodziców",
-    description:
-      "Rodzice otrzymują informację o omawianym materiale, postępach ucznia i zagadnieniach, które warto jeszcze przećwiczyć. Dzięki temu wiedzą, nad czym pracujemy i jak przebiega nauka.",
+      "Każdy z nas uczy sie inaczej, ma własne tempo pracy, inne potrzeby i cele. Dobieram materiały oraz ćwiczenia do poziomu ucznia i tego, nad czym aktualnie pracujemy. Mam też doświadczenie w pracy z osobami z dysleksją.",
+    pill: "Indywidualne podejście",
+    badge: "pill-mint",
   },
   {
     title: "Przemyślany plan nauki",
     description:
-      "Na początku ustalamy cel zajęć i sprawdzamy, czego uczeń potrzebuje. W trakcie współpracy wracamy do trudniejszych tematów, utrwalamy materiał i sprawdzamy, co już udało się opanować.",
+      "Na początku ustalamy jasny cel zajęć i precyzyjnie sprawdzamy, czego uczeń potrzebuje. Lekcje mają uporządkowany układ. Regularnie utrwalamy wcześniej przerobiony materiał, wracamy do trudniejszych tematów i weryfikujemy postępy, dzięki czemu wiedza zostaje na stałe.",
+    pill: "Plan zajęć",
+    badge: "pill-coral",
+  },
+  {
+    title: "Regularny feedback dla rodziców i uczniów",
+    description:
+      "Zarówno rodzice jak i uczniowie otrzymują informację o omawianym materiale, postępach i zagadnieniach, które warto jeszcze przećwiczyć. Dzięki temu wiedzą, nad czym pracujemy, co już udało się opanować i jak przebiega nauka.",
+    pill: "Feedback",
+    badge: "pill-blue",
   },
   {
     title: "Wygodne lekcje online",
-    description:
-      "Uczymy się bez dojazdów, z wykorzystaniem materiałów i ćwiczeń dopasowanych do tematu zajęć. Wystarczy komputer z dostępem do internetu i spokojne miejsce do nauki.",
+    description: "Uczysz się skąd chcesz, bez tracenia czasu i energii na dojazdy czy stanie w korkach. Podczas zajęć korzystamy z angażujących, interaktywnych materiałów, ćwiczeń i multimediów, które sprawiają, że nauka jest ciekawa i różnorodna. Wystarczy komputer z dostępem do internetu, spokojne miejsce.",
+    pill: "Bez dojazdów",
+    badge: "pill-sand",
+    wide: true,
   },
 ] as const;
+
+const lessonPillStyles = {
+  "pill-lavender": "bg-[#e8e1f0] text-[#4a3b5c]",
+  "pill-mint": "bg-[#e2ede7] text-[#2d4d3e]",
+  "pill-coral": "bg-[#f7e6e3] text-[#5c322b]",
+  "pill-blue": "bg-[#e1ebf5] text-[#2b435c]",
+  "pill-sand": "bg-[#f4efe6] text-[#4a4233]",
+} as const;
 
 /** Ordered longest→shortest so tall quotes share a page. */
 const reviews = [
@@ -489,53 +507,52 @@ export default function Home() {
           </svg>
         </section>
 
-        <section id="lekcje" className="relative scroll-mt-24 overflow-visible bg-mint">
-          <div className="relative mx-auto max-w-[1200px] px-6 pb-16 pt-20 sm:pb-20 sm:pt-24">
-            <div
-              className="pointer-events-none absolute -right-[4%] top-8 size-36 rounded-full bg-sage-bright/70 sm:size-48"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute left-[4%] top-20 size-20 rounded-full bg-sage sm:size-28"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-20 left-[8%] size-3 rounded-full bg-foreground sm:size-3.5"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute right-[12%] top-44 size-5 rounded-full bg-green sm:size-6"
-              aria-hidden
-            />
-
-            <div className="relative text-center">
-              <h2 className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-bold tracking-tight">
+        <section
+          id="lekcje"
+          className="relative scroll-mt-24 overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]"
+        >
+          <div className="relative mx-auto max-w-[1080px]">
+            <div className="mb-12 text-center sm:mb-12">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
+                Proces i podejście
+              </span>
+              <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
                 Jak wyglądają lekcje ze mną?
               </h2>
-              <div
-                className="mx-auto mt-3 h-1.5 w-14 rounded-full bg-sage-bright"
-                aria-hidden
-              />
-              <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-foreground/80">
-                Dlaczego warto wybrać właśnie te zajęcia — krótko i konkretnie.
-              </p>
+             
             </div>
 
-            <ol className="relative mx-auto mt-14 grid max-w-4xl gap-10 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-12">
-              {lessonApproachItems.map((item, index) => (
-                <li key={item.title} className="text-left">
-                  <span className="font-display text-sm font-semibold tracking-wide text-cobalt">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-2 font-display text-2xl font-semibold tracking-tight text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base leading-relaxed text-foreground/75 sm:text-lg">
-                    {item.description}
-                  </p>
-                </li>
-              ))}
-            </ol>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {lessonApproachItems.map((item) => {
+                const wide = "wide" in item && item.wide;
+                return (
+                  <article
+                    key={item.title}
+                    className={`flex flex-col items-start rounded-[20px] border border-black/[0.03] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(43,58,50,0.05),0_2px_4px_rgba(43,58,50,0.02)] transition-[transform,box-shadow] duration-250 hover:-translate-y-[3px] hover:shadow-[0_15px_35px_rgba(43,58,50,0.08)] ${
+                      wide
+                        ? "md:col-span-2 md:flex-row md:items-center md:gap-6"
+                        : ""
+                    }`}
+                  >
+                    <span
+                      className={`inline-block shrink-0 rounded-[20px] px-4 py-1.5 text-[13px] font-semibold ${lessonPillStyles[item.badge]} ${
+                        wide ? "mb-4 md:mb-0" : "mb-4"
+                      }`}
+                    >
+                      {item.pill}
+                    </span>
+                    <div className={wide ? "min-w-0" : ""}>
+                      <h3 className="mb-3 font-display text-xl font-bold leading-[1.35] text-[#1a2621]">
+                        {item.title}
+                      </h3>
+                      <p className="m-0 text-[15px] leading-[1.65] text-[#4a5c53]">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </section>
 
