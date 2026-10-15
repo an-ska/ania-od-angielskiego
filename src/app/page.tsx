@@ -287,14 +287,13 @@ export default function Home() {
 
         <section
           id="o-mnie"
-          className="relative scroll-mt-24 overflow-visible px-5 pb-16 pt-10 text-[#2b3a32] sm:px-6 sm:pb-20 sm:pt-14"
-          style={{ backgroundColor: "#f3f7f4" }}
+          className="relative scroll-mt-24 overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]"
         >
           <svg
             viewBox="0 0 1440 48"
             preserveAspectRatio="none"
             className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full sm:-top-12 sm:h-14"
-            style={{ color: "#f3f7f4" }}
+            style={{ color: "#fcf9f2" }}
             aria-hidden
           >
             <path
@@ -302,40 +301,53 @@ export default function Home() {
               fill="currentColor"
             />
           </svg>
-          <div className="relative mx-auto max-w-[720px] text-center">
-            <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)]">
+          <div className="relative mx-auto max-w-[760px] text-center">
+            <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
               Poznaj mnie
             </span>
-            <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
+            <h2 className="mb-7 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
               O mnie
             </h2>
-            <p className="mt-8 font-display text-[clamp(1.75rem,3.5vw,2.25rem)] font-bold leading-snug tracking-tight text-[#263830]">
-              Cześć, jestem Ania!
-            </p>
-            <p className="mt-5 text-base leading-relaxed text-[#4a5c53] sm:text-[1.125rem] sm:leading-[1.65]">
-              Na co dzień jestem żoną, mamą oraz programistką frontend, a z
-              wykształcenia magistrem filologii angielskiej ze specjalnością
-              nauczycielską. Ukończyłam studia na Uniwersytecie Opolskim. Mam
-              ponad 10 lat doświadczenia w nauczaniu. Prowadzę lekcje
-              indywidualne, a wcześniej pracowałam też w szkole językowej. Dzięki
-              temu, że znam świat technologii i kodu, potrafię tłumaczyć rzeczy
-              logicznie i klarownie.
-            </p>
-            <p className="mt-7 font-display text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold leading-snug tracking-tight text-[#d9785a]">
-              Pomogę Ci odkryć, co już potrafisz, uporządkować to, co sprawia
-              trudność, i zrobić kolejny krok.
-            </p>
-            <ul className="mt-10 flex flex-wrap justify-center gap-3">
-              {[
-                "magister filologii angielskiej",
-                "lektorka w szkole językowej",
-                "+10 lat doświadczenia",
-              ].map((item) => (
+            <div className="mb-9 text-center text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
+              <p className="mb-4 text-xl font-bold text-[#1a2621]">
+                Cześć, jestem Ania!
+              </p>
+              <p>
+                Na co dzień jestem żoną, mamą oraz programistką frontend, a z
+                wykształcenia magistrem filologii angielskiej ze specjalnością
+                nauczycielską. Ukończyłam studia na Uniwersytecie Opolskim. Mam
+                ponad 10 lat doświadczenia w nauczaniu. Prowadzę lekcje
+                indywidualne, a wcześniej pracowałam też w szkole językowej.
+                Dzięki temu, że znam świat technologii i kodu, potrafię tłumaczyć
+                rzeczy logicznie i klarownie.
+              </p>
+              <p className="mt-6 text-lg font-semibold leading-relaxed text-[#1a2621]">
+                Pomogę Ci odkryć, co już potrafisz, uporządkować to, co sprawia
+                trudność, i zrobić kolejny krok.
+              </p>
+            </div>
+            <ul className="mt-6 flex flex-wrap justify-center gap-3.5">
+              {(
+                [
+                  {
+                    label: "magister filologii angielskiej",
+                    className: "bg-[#e8e1f0] -rotate-[1.5deg]",
+                  },
+                  {
+                    label: "lektorka w szkole językowej",
+                    className: "bg-[#e2ede7] rotate-[1deg]",
+                  },
+                  {
+                    label: "+10 lat doświadczenia",
+                    className: "bg-[#f7e6e3] -rotate-[0.8deg]",
+                  },
+                ] as const
+              ).map((item) => (
                 <li
-                  key={item}
-                  className="rounded-[20px] border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] px-5 py-2.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)] sm:px-6 sm:py-3 sm:text-[15px]"
+                  key={item.label}
+                  className={`inline-block rounded-[25px] border border-black/5 px-[22px] py-2.5 text-sm font-semibold text-[#2b3a32] shadow-[0_4px_10px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-250 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:translate-y-[-3px] hover:rotate-0 hover:scale-[1.03] hover:shadow-[0_8px_18px_rgba(0,0,0,0.1)] ${item.className}`}
                 >
-                  {item}
+                  {item.label}
                 </li>
               ))}
             </ul>
