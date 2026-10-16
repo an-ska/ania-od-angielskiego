@@ -172,19 +172,23 @@ const reviews = [
 const contact = {
   phone: {
     href: "tel:+48XXXXXXXXX",
-    label: "XXX XXX XXX",
+    label: "+48 XXX XXX XXX",
   },
   email: {
-    href: "mailto:hello@ania-od-angielskiego.pl",
-    label: "hello@ania-od-angielskiego.pl",
+    href: "mailto:kontakt@aniaodangielskiego.pl",
+    label: "kontakt@aniaodangielskiego.pl",
+  },
+  maps: {
+    href: "https://maps.google.com",
+    label: "Ania od angielskiego na Mapach",
   },
   facebook: {
     href: "https://www.facebook.com/",
-    label: "Facebook",
+    label: "@aniaodangielskiego",
   },
   ekorepetycje: {
     href: "https://www.e-korepetycje.net/",
-    label: "e-korepetycje.net",
+    label: "Profil e-korepetycje.net",
   },
 } as const;
 
@@ -609,94 +613,162 @@ export default function Home() {
           </svg>
         </section>
 
-        <section id="kontakt" className="relative scroll-mt-24 overflow-visible bg-mint">
-          <div className="relative mx-auto max-w-[1200px] px-6 pb-16 pt-20 text-center sm:pb-20 sm:pt-24">
-            <div
-              className="pointer-events-none absolute -right-[3%] top-10 size-36 rounded-full bg-sage-bright/70 sm:size-48"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute left-[3%] top-24 size-16 rounded-full bg-sage sm:size-24"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-16 left-[7%] size-3 rounded-full bg-foreground sm:size-3.5"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute bottom-28 right-[12%] size-5 rounded-full bg-green sm:size-6"
-              aria-hidden
-            />
+        <section
+          id="cennik"
+          className="relative scroll-mt-24 overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]"
+        >
+          <div className="relative mx-auto max-w-[1080px]">
+            {/* Cennik — treść w kolejnym kroku */}
+          </div>
+        </section>
 
-            <div className="relative">
-              <h2 className="font-display text-[clamp(1.75rem,3vw,2.25rem)] font-bold tracking-tight">
-                Kontakt
+        <section
+          id="kontakt"
+          className="relative scroll-mt-24 overflow-visible px-5 pb-[110px] pt-16 text-[#2b3a32] sm:px-6 sm:pt-[90px]"
+          style={{
+            backgroundColor: "#dcd0e5",
+            backgroundImage:
+              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+            backgroundSize: "15px 15px",
+          }}
+        >
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -top-10 left-0 z-[1] h-12 w-full sm:-top-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
+            />
+          </svg>
+          <div className="relative mx-auto max-w-[680px]">
+            <div className="mb-10 text-center">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
+                Napisz lub zadzwoń
+              </span>
+              <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
+                Porozmawiajmy o lekcjach
               </h2>
-              <div
-                className="mx-auto mt-3 h-1.5 w-14 rounded-full bg-sage-bright"
-                aria-hidden
-              />
-              <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-foreground/80">
-                Napisz lub zadzwoń — dobierzemy termin lekcji próbnej.
-              </p>
+            </div>
 
-              <ul className="mx-auto mt-12 grid max-w-2xl gap-8 sm:grid-cols-2 sm:gap-x-16 sm:gap-y-10">
-                <li>
-                  <a
-                    href={contact.phone.href}
-                    className="group block text-foreground transition-colors hover:text-cobalt"
+            <div className="relative rounded-[24px] border border-white/60 bg-[#fcf9f2] px-5 pb-6 pt-9 shadow-[0_15px_35px_rgba(43,58,50,0.12),0_3px_8px_rgba(43,58,50,0.06)] sm:px-10 sm:pb-10 sm:pt-12">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/paper-clip.png?v=vert3"
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute -top-[21px] left-4 z-10 w-[34px] drop-shadow-[2px_3px_5px_rgba(43,58,50,0.15)]"
+              />
+
+              <ul className="m-0 flex list-none flex-col gap-4 p-0">
+                {(
+                  [
+                    {
+                      key: "phone",
+                      pill: "Telefon",
+                      pillClass: "pill-coral",
+                      href: contact.phone.href,
+                      label: contact.phone.label,
+                      external: false,
+                      icon: (
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      ),
+                    },
+                    {
+                      key: "email",
+                      pill: "E-mail",
+                      pillClass: "pill-mint",
+                      href: contact.email.href,
+                      label: contact.email.label,
+                      external: false,
+                      icon: (
+                        <>
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                          <polyline points="22,6 12,13 2,6" />
+                        </>
+                      ),
+                    },
+                    {
+                      key: "maps",
+                      pill: "Google Maps",
+                      pillClass: "pill-sand",
+                      href: contact.maps.href,
+                      label: contact.maps.label,
+                      external: true,
+                      icon: (
+                        <>
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                          <circle cx="12" cy="10" r="3" />
+                        </>
+                      ),
+                    },
+                    {
+                      key: "facebook",
+                      pill: "Facebook",
+                      pillClass: "pill-lavender",
+                      href: contact.facebook.href,
+                      label: contact.facebook.label,
+                      external: true,
+                      icon: (
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      ),
+                    },
+                    {
+                      key: "ekorepetycje",
+                      pill: "e-korepetycje.net",
+                      pillClass: "pill-blue",
+                      href: contact.ekorepetycje.href,
+                      label: contact.ekorepetycje.label,
+                      external: true,
+                      icon: (
+                        <>
+                          <circle cx="12" cy="12" r="10" />
+                          <line x1="12" y1="8" x2="12" y2="12" />
+                          <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </>
+                      ),
+                    },
+                  ] as const
+                ).map((item) => (
+                  <li
+                    key={item.key}
+                    className="flex flex-col items-start gap-2 rounded-xl border-b border-dashed border-[rgba(43,58,50,0.12)] px-2 py-3 transition-colors duration-200 hover:bg-white/50 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4"
                   >
-                    <span className="block text-sm font-medium tracking-wide text-foreground/55 uppercase">
-                      Telefon
+                    <span
+                      className={`rounded-2xl px-4 py-1.5 text-[13px] font-bold shadow-[0_2px_4px_rgba(0,0,0,0.04)] ${lessonPillStyles[item.pillClass]}`}
+                    >
+                      {item.pill}
                     </span>
-                    <span className="mt-2 block font-display text-[1.65rem] font-semibold tracking-tight sm:text-3xl">
-                      {contact.phone.label}
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={contact.email.href}
-                    className="group block text-foreground transition-colors hover:text-cobalt"
-                  >
-                    <span className="block text-sm font-medium tracking-wide text-foreground/55 uppercase">
-                      E-mail
-                    </span>
-                    <span className="mt-2 block font-display text-[1.35rem] font-semibold tracking-tight break-all sm:text-2xl">
-                      {contact.email.label}
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={contact.facebook.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block text-foreground transition-colors hover:text-cobalt"
-                  >
-                    <span className="block text-sm font-medium tracking-wide text-foreground/55 uppercase">
-                      Facebook
-                    </span>
-                    <span className="mt-2 block font-display text-[1.65rem] font-semibold tracking-tight sm:text-3xl">
-                      {contact.facebook.label}
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={contact.ekorepetycje.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block text-foreground transition-colors hover:text-cobalt"
-                  >
-                    <span className="block text-sm font-medium tracking-wide text-foreground/55 uppercase">
-                      Profil
-                    </span>
-                    <span className="mt-2 block font-display text-[1.65rem] font-semibold tracking-tight sm:text-3xl">
-                      {contact.ekorepetycje.label}
-                    </span>
-                  </a>
-                </li>
+                    <a
+                      href={item.href}
+                      {...(item.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="group flex items-center gap-2.5 text-[15px] font-bold text-[#1a2621] no-underline transition-all duration-200 hover:translate-x-0.5 hover:text-[#e07a5f] sm:text-base"
+                    >
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="shrink-0 text-[#3b5249] transition-colors group-hover:text-[#e07a5f]"
+                        aria-hidden
+                      >
+                        {item.icon}
+                      </svg>
+                      <span className={item.key === "email" ? "break-all" : ""}>
+                        {item.label}
+                      </span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
