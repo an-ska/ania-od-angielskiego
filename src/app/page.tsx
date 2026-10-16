@@ -99,6 +99,51 @@ const lessonPillStyles = {
   "pill-sand": "bg-[#f4efe6] text-[#4a4233]",
 } as const;
 
+const pricingPlans = [
+  {
+    pill: "Indywidualnie",
+    pillClass: "pill-lavender" as const,
+    pillRotate: "-rotate-1",
+    title: "Lekcje 1:1",
+    description: "Pełne skupienie na Twoich celach, tempie i potrzebach.",
+    price: "120 zł",
+    period: "/ 60 minut",
+    features: [
+      "Indywidualne tempo",
+      "Wygodny termin lekcji",
+    ],
+  },
+  {
+    pill: "Wystartujcie razem",
+    pillClass: "pill-coral" as const,
+    pillRotate: "rotate-1",
+    title: "Lekcje w parze",
+    description:
+      "Nauka dla rodzeństwa, pary lub znajomych w swobodnej atmosferze.",
+    price: "80 zł",
+    period: "/ osoba / 60 minut",
+    featured: true,
+    features: [
+      "Niższy koszt za osobę",
+      "Wspólna motywacja",
+    ],
+  },
+  {
+    pill: "Na Twoich zasadach",
+    pillClass: "pill-mint" as const,
+    pillRotate: "-rotate-[0.8deg]",
+    title: "Warunki specjalne",
+    description:
+      "Potrzebujesz nietypowego planu? Dopasujemy format do Twoich potrzeb.",
+    customTitle: "Wycena indywidualna",
+    features: [
+      "Intensywne kursy (np. lekcje codziennie przez 2 miesiące)",
+      
+      "Zajęcia dla firm lub współpraca ze szkołą",
+    ],
+  },
+] as const;
+
 /** Ordered longest→shortest so tall quotes share a page. */
 const reviews = [
   {
@@ -237,6 +282,12 @@ export default function Home() {
                   className="transition-colors hover:text-[#2b3a32]"
                 >
                   Opinie
+                </a>
+                <a
+                  href="#cennik"
+                  className="transition-colors hover:text-[#2b3a32]"
+                >
+                  Cennik
                 </a>
                 <a
                   href="#kontakt"
@@ -617,8 +668,82 @@ export default function Home() {
           id="cennik"
           className="relative scroll-mt-24 overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]"
         >
-          <div className="relative mx-auto max-w-[1080px]">
-            {/* Cennik — treść w kolejnym kroku */}
+          <div className="relative mx-auto max-w-[1120px]">
+            <div className="mb-12 text-center">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
+                Inwestycja w język
+              </span>
+              <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
+                Cennik
+              </h2>
+              <p className="mx-auto max-w-xl text-[17px] leading-relaxed text-[#4a5c53]">
+                Wszystkie lekcje odbywają się online i trwają 60 minut
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 items-stretch gap-7 lg:grid-cols-3">
+              {pricingPlans.map((plan) => {
+                const featured = "featured" in plan && plan.featured;
+                const customTitle =
+                  "customTitle" in plan ? plan.customTitle : null;
+                return (
+                  <article
+                    key={plan.title}
+                    className={`relative flex flex-col rounded-[24px] px-7 py-9 shadow-[0_10px_30px_rgba(43,58,50,0.05),0_2px_4px_rgba(43,58,50,0.02)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_15px_35px_rgba(43,58,50,0.08)] ${
+                      featured
+                        ? "border-2 border-[#e07a5f] bg-[#fffefb]"
+                        : "border border-black/[0.03] bg-white"
+                    }`}
+                  >
+                    <span
+                      className={`mb-[18px] self-start rounded-[20px] px-4 py-1.5 text-[13px] font-semibold ${lessonPillStyles[plan.pillClass]} ${plan.pillRotate}`}
+                    >
+                      {plan.pill}
+                    </span>
+                    <h3 className="mb-2 font-display text-[22px] font-bold leading-snug text-[#1a2621]">
+                      {plan.title}
+                    </h3>
+                    <p className="mb-6 text-sm leading-normal text-[#6a8275]">
+                      {plan.description}
+                    </p>
+
+                    <div className="mb-6 border-b border-dashed border-[rgba(43,58,50,0.12)] pb-5">
+                      {customTitle ? (
+                        <span className="mt-2.5 block text-2xl font-extrabold leading-snug text-[#1a2621]">
+                          {customTitle}
+                        </span>
+                      ) : (
+                        <>
+                          <span className="block text-[40px] font-extrabold leading-none text-[#1a2621]">
+                            {"price" in plan ? plan.price : null}
+                          </span>
+                          <span className="text-[13px] font-semibold text-[#6a8275]">
+                            {"period" in plan ? plan.period : null}
+                          </span>
+                        </>
+                      )}
+                    </div>
+
+                    <ul className="m-0 flex list-none flex-col gap-3 p-0">
+                      {plan.features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2.5 text-sm leading-normal text-[#3b5249]"
+                        >
+                          <span
+                            className="shrink-0 font-extrabold text-[#2d4d3e]"
+                            aria-hidden
+                          >
+                            ✓
+                          </span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </section>
 
