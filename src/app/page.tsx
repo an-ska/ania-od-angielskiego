@@ -109,8 +109,8 @@ const pricingPlans = [
     price: "120 zł",
     period: "/ 60 minut",
     features: [
-      "Indywidualne tempo",
-      "Wygodny termin lekcji",
+      "100% uwagi tylko dla Ciebie",
+      "Indywidualny plan i materiały",
     ],
   },
   {
@@ -671,7 +671,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-[1120px]">
             <div className="mb-12 text-center">
               <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
-                Inwestycja w język
+                Formy współpracy
               </span>
               <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
                 Cennik
