@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { HeroCollage } from "@/components/hero-collage";
+import { OfferGrid, type OfferItem } from "@/components/offer-grid";
 import { ReviewsSlider } from "@/components/reviews-slider";
 import { SectionDivider } from "@/components/section-divider";
-const offerItems = [
+
+const offerItems: OfferItem[] = [
   {
     title: "Angielski szkolny",
     subtitle: "Bieżąca nauka i nadrabianie zaległości",
@@ -10,6 +12,7 @@ const offerItems = [
       "Pomagam uporządkować materiał, zrozumieć gramatykę i nadrobić zaległości. Pracujemy nad tym, co sprawia trudność i przygotowujemy się do sprawdzianów.",
     audience: "Dla uczniów, którzy potrzebują regularnego wsparcia w nauce.",
     graphic: "/offer-school.png?v=soft",
+    audiences: ["youth"],
   },
   {
     title: "Angielski od pierwszych kroków",
@@ -18,7 +21,9 @@ const offerItems = [
       "Zaczynamy od tego, co już wiesz, i spokojnie budujemy kolejne umiejętności. Poznajemy przydatne słownictwo, uczymy się tworzyć zdania i oswajamy z mówieniem.",
     audience:
       "Dla początkujących, osób wracających do nauki i dorosłych, którzy chcą zacząć od podstaw.",
-    graphic: "/offer-first-steps.png?v=soft",
+    graphic: "/offer-first-steps.png?v=flush",
+    largeGraphic: true,
+    audiences: ["adults"],
   },
   {
     title: "Egzaminy pod kontrolą",
@@ -28,6 +33,7 @@ const offerItems = [
     audience:
       "Dla ósmoklasistów i maturzystów przygotowujących się do poziomu podstawowego.",
     graphic: "/offer-exams.png?v=soft",
+    audiences: ["youth"],
   },
   {
     title: "Angielski w praktyce",
@@ -36,15 +42,17 @@ const offerItems = [
       "Chcesz poradzić sobie na lotnisku, zameldować się w hotelu, zamówić jedzenie lub swobodniej rozmawiać z innymi? Ćwiczymy konkretne sytuacje, przydatne zwroty i dialogi, które pomagają przełamać barierę językową.",
     audience:
       "Dla młodzieży i dorosłych, którzy chcą wykorzystywać angielski w codziennych sytuacjach.",
-    graphic: "/offer-practice.png?v=soft",
+    graphic: "/offer-practice.png?v=tone",
+    audiences: ["adults"],
   },
   {
-    title: "Angielski w IT & Rozmowy rekrutacyjne",
+    title: "Angielski w IT",
     description:
       "Czujesz, że Twój angielski zardzewiał, bo w projektach pracowałeś głównie z polskimi zespołami lub polskim klientem? Mówisz po angielsku, ale brakuje Ci swobody? Przygotuj się do rozmowy rekrutacyjnej albo na spotkania w międzynarodowym gronie.",
     audience:
       "Dla specjalistów IT potrzebujących językowego odświeżenia przed rozmową rekrutacyjną lub spotkaniami z zespołem.",
-    graphic: "/offer-curiosity-compass.png",
+    graphic: "/offer-it.png?v=raw",
+    audiences: ["adults"],
   },
   {
     title: "Wstępna weryfikacja językowa w IT",
@@ -52,7 +60,8 @@ const offerItems = [
       "Szukasz specjalisty do projektu, ale chcesz mieć pewność, że jego angielski faktycznie pozwoli mu na swobodną komunikację? Przeprowadzę szybką, wstępną weryfikację, oszczędzając czas Twojego zespołu.",
     audience:
       "Dla firm i rekruterów technicznych, którzy chcą sprawdzić realne umiejętności językowe kandydata przed rozmową techniczną.",
-    graphic: "/offer-exams.png?v=soft",
+    graphic: "/offer-verification.png?v=2",
+    audiences: ["business"],
   },
   {
     title: "Angielski z ciekawości",
@@ -61,13 +70,11 @@ const offerItems = [
       "Odkrywamy idiomy, nietypowe wyrażenia, język filmów i piosenek, ciekawostki kulturowe oraz zwyczaje krajów anglojęzycznych. Rozwijamy słownictwo, bawimy się językiem i poznajemy go z zupełnie innej strony.",
     audience:
       "Dla ciekawych świata uczniów oraz dorosłych, którzy chcą rozwijać angielski dla przyjemności.",
-    graphics: [
-      "/offer-curiosity-compass.png",
-      "/offer-curiosity-book.png",
-    ] as const,
+    graphic: "/offer-curiosity.png?v=book",
     wide: true,
+    audiences: ["youth", "adults"],
   },
-] as const;
+];
 
 const lessonApproachItems = [
   {
@@ -474,96 +481,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-7">
-              {offerItems.map((item) => {
-                const graphic =
-                  "graphic" in item ? item.graphic : undefined;
-                const graphics =
-                  "graphics" in item ? item.graphics : undefined;
-                const wide = "wide" in item && item.wide;
-
-                if (graphics) {
-                  const [leftGraphic, rightGraphic] = graphics;
-                  return (
-                    <article
-                      key={item.title}
-                      className="flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] px-5 py-6 shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)] sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-[820px] sm:flex-row sm:items-center sm:gap-3 sm:px-5 sm:py-5"
-                    >
-                      <div className="flex w-full items-start justify-center gap-6 sm:contents">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={leftGraphic}
-                          alt=""
-                          aria-hidden
-                          className="w-[38%] max-w-[150px] shrink-0 object-contain sm:w-[150px] sm:self-center"
-                        />
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={`${rightGraphic}?v=2`}
-                          alt=""
-                          aria-hidden
-                          className="w-[38%] max-w-[150px] shrink-0 object-contain sm:order-3 sm:w-[150px] sm:self-center"
-                        />
-                      </div>
-                      <div className="min-w-0 flex-1 text-center sm:order-2">
-                        <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] sm:text-[1.75rem]">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] sm:text-[1.0625rem]">
-                          {item.subtitle}
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-[#4a5c53] sm:text-[15px]">
-                          {item.description}
-                        </p>
-                        <p className="mt-3 text-sm leading-relaxed text-[#5a6b62]">
-                          {item.audience}
-                        </p>
-                      </div>
-                    </article>
-                  );
-                }
-
-                return (
-                  <article
-                    key={item.title}
-                    className={`flow-root rounded-2xl border border-[rgba(59,82,73,0.08)] bg-[#f4efe6] p-5 shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)] sm:p-6 ${
-                      wide
-                        ? "sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-[780px]"
-                        : ""
-                    }`}
-                  >
-                    {graphic ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={graphic}
-                        alt=""
-                        aria-hidden
-                        className="float-left mb-1 mr-4 w-[min(48%,200px)] object-contain max-sm:float-none max-sm:mx-auto max-sm:mb-4 max-sm:block max-sm:w-[72%]"
-                        style={{
-                          shapeOutside: `url("${graphic}")`,
-                          shapeMargin: "0.85rem",
-                          shapeImageThreshold: 0.2,
-                        }}
-                      />
-                    ) : null}
-                    <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] max-sm:text-center sm:text-[1.75rem]">
-                      {item.title}
-                    </h3>
-                    {"subtitle" in item && item.subtitle ? (
-                      <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] max-sm:text-center sm:text-[1.0625rem]">
-                        {item.subtitle}
-                      </p>
-                    ) : null}
-                    <p className="mt-2 text-sm leading-relaxed text-[#4a5c53] max-sm:text-center sm:text-[15px]">
-                      {item.description}
-                    </p>
-                    <p className="mt-3 clear-both text-sm leading-relaxed text-[#5a6b62] max-sm:text-center">
-                      {item.audience}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
+            <OfferGrid items={offerItems} />
           </div>
           <svg
             viewBox="0 0 1440 48"
