@@ -47,6 +47,7 @@ const offerItems: OfferItem[] = [
   },
   {
     title: "Angielski w IT",
+    subtitle: "Przygotowanie do rozmów i swobodna komunikacja w projektach",
     description:
       "Czujesz, że Twój angielski zardzewiał, bo w projektach pracowałeś głównie z polskimi zespołami lub polskim klientem? Mówisz po angielsku, ale brakuje Ci swobody? Przygotuj się do rozmowy rekrutacyjnej albo na spotkania w międzynarodowym gronie.",
     audience:
@@ -56,6 +57,7 @@ const offerItems: OfferItem[] = [
   },
   {
     title: "Wstępna weryfikacja językowa w IT",
+    subtitle: "Szybkie sprawdzenie poziomu angielskiego kandydata",
     description:
       "Szukasz specjalisty do projektu, ale chcesz mieć pewność, że jego angielski faktycznie pozwoli mu na swobodną komunikację? Przeprowadzę szybką, wstępną weryfikację, oszczędzając czas Twojego zespołu.",
     audience:
