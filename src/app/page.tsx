@@ -39,6 +39,22 @@ const offerItems = [
     graphic: "/offer-practice.png?v=soft",
   },
   {
+    title: "Angielski w IT & Rozmowy rekrutacyjne",
+    description:
+      "Czujesz, że Twój angielski zardzewiał, bo w projektach pracowałeś głównie z polskimi zespołami lub polskim klientem? Mówisz po angielsku, ale brakuje Ci swobody? Przygotuj się do rozmowy rekrutacyjnej albo na spotkania w międzynarodowym gronie.",
+    audience:
+      "Dla specjalistów IT potrzebujących językowego odświeżenia przed rozmową rekrutacyjną lub spotkaniami z zespołem.",
+    graphic: "/offer-curiosity-compass.png",
+  },
+  {
+    title: "Wstępna weryfikacja językowa w IT",
+    description:
+      "Szukasz specjalisty do projektu, ale chcesz mieć pewność, że jego angielski faktycznie pozwoli mu na swobodną komunikację? Przeprowadzę szybką, wstępną weryfikację, oszczędzając czas Twojego zespołu.",
+    audience:
+      "Dla firm i rekruterów technicznych, którzy chcą sprawdzić realne umiejętności językowe kandydata przed rozmową techniczną.",
+    graphic: "/offer-exams.png?v=soft",
+  },
+  {
     title: "Angielski z ciekawości",
     subtitle: "Więcej niż szkolny podręcznik",
     description:
@@ -76,9 +92,9 @@ const lessonApproachItems = [
     badge: "pill-coral",
   },
   {
-    title: "Regularny feedback dla rodziców i uczniów",
+    title: "Stały feedback i monitorowanie postępów",
     description:
-      "Zarówno rodzice jak i uczniowie otrzymują informację o omawianym materiale, postępach i zagadnieniach, które warto jeszcze przećwiczyć. Dzięki temu wiedzą, nad czym pracujemy, co już udało się opanować i jak przebiega nauka.",
+      "Otrzymujesz jasną informację zwrotną o omawianym materiale, postępach i zagadnieniach, nad którymi warto jeszcze popracować. W przypadku młodszych uczniów w stałym kontakcie są również rodzice dzięki temu każdy wie, nad czym pracujemy i jak przebiega nauka.",
     pill: "Feedback",
     badge: "pill-blue",
   },
@@ -138,8 +154,7 @@ const pricingPlans = [
     customTitle: "Wycena indywidualna",
     features: [
       "Intensywne kursy (np. lekcje codziennie przez 2 miesiące)",
-      
-      "Zajęcia dla firm lub współpraca ze szkołą",
+      "Współpraca z firmami lub zajęcia dla szkół",
     ],
   },
 ] as const;
@@ -534,9 +549,11 @@ export default function Home() {
                     <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] max-sm:text-center sm:text-[1.75rem]">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] max-sm:text-center sm:text-[1.0625rem]">
-                      {item.subtitle}
-                    </p>
+                    {"subtitle" in item && item.subtitle ? (
+                      <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] max-sm:text-center sm:text-[1.0625rem]">
+                        {item.subtitle}
+                      </p>
+                    ) : null}
                     <p className="mt-2 text-sm leading-relaxed text-[#4a5c53] max-sm:text-center sm:text-[15px]">
                       {item.description}
                     </p>
@@ -897,10 +914,22 @@ export default function Home() {
               </ul>
             </div>
           </div>
+          <svg
+            viewBox="0 0 1440 48"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute -bottom-10 left-0 z-[1] h-12 w-full rotate-180 sm:-bottom-12 sm:h-14"
+            style={{ color: "#dcd0e5" }}
+            aria-hidden
+          >
+            <path
+              d="M0 48 V22 C180 6 320 40 520 28 C760 12 920 4 1120 22 C1280 34 1380 18 1440 12 V48 Z"
+              fill="currentColor"
+            />
+          </svg>
         </section>
       </main>
 
-      <footer className="border-t border-foreground/5 py-6 text-center text-sm text-muted">
+      <footer className="bg-[#fcf9f2] pb-8 pt-16 text-center text-sm text-[#6a8275] sm:pt-20">
         © 2026 Ania od angielskiego
       </footer>
     </div>
