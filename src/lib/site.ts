@@ -4,15 +4,15 @@
  */
 export const siteConfig = {
   name: "Ania od angielskiego",
-  /** Live URL until custom domain is connected. */
-  url: "https://ania-od-angielskiego.vercel.app",
+  /** Canonical production URL (apex redirects to www on Vercel). */
+  url: "https://www.ania-od-angielskiego.pl",
   title:
     "Ania od angielskiego | Korepetycje i lekcje angielskiego online",
   description:
     "Indywidualne lekcje angielskiego online: ósmoklasista, matura, angielski w IT i dla dorosłych. Magister filologii, 10+ lat doświadczenia. Umów lekcję.",
   locale: "pl_PL",
   /** Brand inbox — set after domain mail is live. Until then leave ready: false. */
-  email: "kontakt@aniaodangielskiego.pl",
+  email: "kontakt@ania-od-angielskiego.pl",
   reviewCount: 13,
   ratingValue: 5,
   contact: {
@@ -23,8 +23,8 @@ export const siteConfig = {
       ready: false,
     },
     email: {
-      href: "mailto:kontakt@aniaodangielskiego.pl",
-      label: "kontakt@aniaodangielskiego.pl",
+      href: "mailto:kontakt@ania-od-angielskiego.pl",
+      label: "kontakt@ania-od-angielskiego.pl",
       ready: false,
     },
     maps: {
