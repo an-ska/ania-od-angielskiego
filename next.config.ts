@@ -12,6 +12,21 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "ania-od-angielskiego.vercel.app",
+          },
+        ],
+        destination: "https://www.ania-od-angielskiego.pl/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
