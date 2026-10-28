@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { HeroCollage } from "@/components/hero-collage";
 import { OfferGrid, type OfferItem } from "@/components/offer-grid";
 import { ReviewsSlider } from "@/components/reviews-slider";
 import { SectionDivider } from "@/components/section-divider";
+import { SiteHeader } from "@/components/site-header";
 
 const offerItems: OfferItem[] = [
   {
@@ -262,16 +262,17 @@ const contact = {
   },
   ekorepetycje: {
     href: "https://www.e-korepetycje.net/",
-    label: "Profil e-korepetycje.net",
+    label: "Profil na e-korepetycje.net",
   },
 } as const;
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
+      <SiteHeader />
       <main>
         <section
-          className="relative overflow-hidden pt-28 text-[#2b3a32] sm:pt-32 lg:pt-36"
+          className="relative overflow-hidden pt-[5.5rem] text-[#2b3a32] sm:pt-32 lg:pt-36"
           style={{
             backgroundColor: "#dcd0e5",
             backgroundImage:
@@ -279,109 +280,36 @@ export default function Home() {
             backgroundSize: "15px 15px",
           }}
         >
-          <header className="absolute inset-x-0 top-4 z-30 px-4 sm:top-5 sm:px-6">
-            <div className="mx-auto flex max-w-[896px] items-center justify-between gap-4 rounded-full bg-white/90 px-5 py-3 shadow-[0_8px_30px_rgba(31,42,36,0.06)] backdrop-blur-sm sm:px-7">
-              <Link
-                href="/"
-                className="font-display text-xl font-bold tracking-tight text-[#3b5249] transition-opacity hover:opacity-80"
-              >
-                Ania
-              </Link>
-              <nav className="hidden items-center gap-7 text-[15px] font-medium text-[#3b5249] md:flex">
-                <a
-                  href="#o-mnie"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  O mnie
-                </a>
-                <a
-                  href="#oferta"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  Oferta
-                </a>
-                <a
-                  href="#lekcje"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  Lekcje
-                </a>
-                <a
-                  href="#opinie"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  Opinie
-                </a>
-                <a
-                  href="#cennik"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  Cennik
-                </a>
-                <a
-                  href="#kontakt"
-                  className="transition-colors hover:text-[#2b3a32]"
-                >
-                  Kontakt
-                </a>
-              </nav>
-              <div className="flex items-center gap-1.5">
-                <a
-                  href={contact.facebook.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="flex size-10 items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32]"
-                >
-                  <svg viewBox="0 0 24 24" className="block size-5" fill="currentColor" aria-hidden>
-                    <path d="M14 8.2h2.2V5.1c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.7H6.3v3.4h2.4V22h3.5v-6.1h2.7l.4-3.4h-3.1v-2.3c0-1 .3-1.7 1.8-1.7z" />
-                  </svg>
-                </a>
-                <a
-                  href={contact.ekorepetycje.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Profil na e-korepetycje.net"
-                  className="flex size-10 items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32]"
-                >
-                  <svg viewBox="0 0 24 24" className="block size-5" fill="currentColor" aria-hidden>
-                    <path d="M12 4.2C10 2.9 7.4 2.2 4.5 2.2c-1 0-1.9.1-2.8.4-.7.2-1.1.8-1.1 1.5v13.6c0 .9.8 1.5 1.6 1.3 1-.2 2-.3 3-.3 2.1 0 4.1.6 5.8 1.8.3.2.7.2 1 0 1.7-1.2 3.7-1.8 5.8-1.8 1 0 2 .1 3 .3.8.2 1.6-.4 1.6-1.3V4.1c0-.7-.4-1.3-1.1-1.5-.9-.3-1.8-.4-2.8-.4-2.9 0-5.5.7-7.5 2zm0 2.3c1.6-1 3.6-1.5 5.7-1.5.8 0 1.5.1 2.2.2v11.6c-.8-.1-1.6-.2-2.4-.2-1.9 0-3.7.5-5.5 1.4V6.5zm-1.5 11.5c-1.8-.9-3.6-1.4-5.5-1.4-.8 0-1.6.1-2.4.2V5.2c.7-.1 1.4-.2 2.2-.2 2.1 0 4.1.5 5.7 1.5v11.5z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </header>
-
-          <div className="relative mx-auto flex max-w-[1040px] flex-wrap items-center gap-3 px-5 pb-16 sm:px-6 md:flex-nowrap md:gap-0 md:pb-20">
-            <div className="z-[2] min-w-[280px] shrink-0 text-center md:w-1/2 md:max-w-none md:pr-4 md:text-left">
-              <span className="mb-6 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-2 text-[15px] font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
+          <div className="relative mx-auto flex w-full max-w-[1040px] flex-col px-5 pb-8 sm:px-6 sm:pb-12 md:flex-row md:items-center md:pb-20 md:pt-4">
+            <div className="z-[2] w-full shrink-0 pt-1 text-center animate-[fade-up_0.7s_ease-out_both] md:w-1/2 md:pt-0 md:pr-4 md:text-left">
+              <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-3.5 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)] sm:mb-6 sm:px-4 sm:py-2 sm:text-[15px]">
                 Angielski online
               </span>
-              <h1 className="mb-6 font-display text-[clamp(2.75rem,6vw,3.75rem)] font-bold leading-[1.08] tracking-tight text-[#263830]">
+              <h1 className="mb-3 font-display text-[clamp(2.25rem,9vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#263830] sm:mb-6">
                 Ania od angielskiego
               </h1>
-              <p className="mx-auto mb-9 max-w-[520px] text-[1.125rem] leading-[1.65] text-[#4a5c53] sm:text-[1.2rem] md:mx-0">
+              <p className="mx-auto mb-5 max-w-[22rem] text-[0.98rem] leading-[1.55] text-[#4a5c53] sm:mb-9 sm:max-w-[28rem] sm:text-[1.2rem] sm:leading-[1.65] md:mx-0 md:max-w-[520px]">
                 Angielski dla uczniów i dorosłych: od szkolnych zaległości i
                 egzaminów po swobodną komunikację i odkrywanie języka na własnych
                 zasadach.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:justify-start">
                 <a
                   href="#kontakt"
-                  className="inline-flex items-center whitespace-nowrap rounded-[30px] bg-[#3b5249] px-8 py-4 text-base font-medium text-white shadow-[0_4px_10px_rgba(59,82,73,0.2)] transition-colors hover:bg-[#2b3a32]"
+                  className="inline-flex items-center justify-center rounded-[30px] bg-[#3b5249] px-6 py-3 text-[0.95rem] font-medium text-white shadow-[0_4px_10px_rgba(59,82,73,0.2)] transition-colors hover:bg-[#2b3a32] sm:px-8 sm:py-4 sm:text-base"
                 >
                   Umów lekcję
                 </a>
                 <a
                   href="#oferta"
-                  className="inline-flex items-center whitespace-nowrap rounded-[30px] border border-[#3b5249] bg-transparent px-8 py-4 text-base font-medium text-[#3b5249] transition-colors hover:bg-[rgba(59,82,73,0.05)]"
+                  className="inline-flex items-center justify-center rounded-[30px] border border-[#3b5249] bg-transparent px-6 py-3 text-[0.95rem] font-medium text-[#3b5249] transition-colors hover:bg-[rgba(59,82,73,0.05)] sm:px-8 sm:py-4 sm:text-base"
                 >
                   Poznaj ofertę
                 </a>
               </div>
             </div>
 
-            <div className="min-w-[280px] flex-1 md:min-w-0">
+            <div className="relative mx-auto mt-6 w-full max-w-[22rem] animate-[fade-up_0.85s_ease-out_0.12s_both] sm:mt-8 sm:max-w-[26rem] md:mx-0 md:mt-0 md:max-w-none md:min-w-0 md:flex-1">
               <HeroCollage variant="doodle" />
             </div>
           </div>
@@ -527,18 +455,16 @@ export default function Home() {
                     key={item.title}
                     className={`flex flex-col items-start rounded-[20px] border border-black/[0.03] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(43,58,50,0.05),0_2px_4px_rgba(43,58,50,0.02)] transition-[transform,box-shadow] duration-250 hover:-translate-y-[3px] hover:shadow-[0_15px_35px_rgba(43,58,50,0.08)] ${
                       wide
-                        ? "md:col-span-2 md:flex-row md:items-center md:gap-6"
+                        ? "md:col-span-2 md:mx-auto md:w-full md:max-w-[780px]"
                         : ""
                     }`}
                   >
                     <span
-                      className={`inline-block shrink-0 rounded-[20px] px-4 py-1.5 text-[13px] font-semibold ${lessonPillStyles[item.badge]} ${
-                        wide ? "mb-4 md:mb-0" : "mb-4"
-                      }`}
+                      className={`mb-4 inline-block shrink-0 rounded-[20px] px-4 py-1.5 text-[13px] font-semibold ${lessonPillStyles[item.badge]}`}
                     >
                       {item.pill}
                     </span>
-                    <div className={wide ? "min-w-0" : ""}>
+                    <div>
                       <h3 className="mb-3 font-display text-xl font-bold leading-[1.35] text-[#1a2621]">
                         {item.title}
                       </h3>
@@ -816,9 +742,6 @@ export default function Home() {
                       href: contact.facebook.href,
                       label: contact.facebook.label,
                       external: true,
-                      icon: (
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                      ),
                     },
                     {
                       key: "ekorepetycje",
@@ -827,13 +750,6 @@ export default function Home() {
                       href: contact.ekorepetycje.href,
                       label: contact.ekorepetycje.label,
                       external: true,
-                      icon: (
-                        <>
-                          <circle cx="12" cy="12" r="10" />
-                          <line x1="12" y1="8" x2="12" y2="12" />
-                          <line x1="12" y1="16" x2="12.01" y2="16" />
-                        </>
-                      ),
                     },
                   ] as const
                 ).map((item) => (
@@ -853,20 +769,22 @@ export default function Home() {
                         : {})}
                       className="group flex items-center gap-2.5 text-[15px] font-bold text-[#1a2621] no-underline transition-all duration-200 hover:translate-x-0.5 hover:text-[#e07a5f] sm:text-base"
                     >
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="shrink-0 text-[#3b5249] transition-colors group-hover:text-[#e07a5f]"
-                        aria-hidden
-                      >
-                        {item.icon}
-                      </svg>
+                      {"icon" in item ? (
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="shrink-0 text-[#3b5249] transition-colors group-hover:text-[#e07a5f]"
+                          aria-hidden
+                        >
+                          {item.icon}
+                        </svg>
+                      ) : null}
                       <span className={item.key === "email" ? "break-all" : ""}>
                         {item.label}
                       </span>

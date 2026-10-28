@@ -7,7 +7,7 @@ export function DoodleCollage() {
   const cy = 53.95;
 
   return (
-    <div className="relative -mr-4 aspect-[558/491] w-[118%] max-w-none sm:-mr-7 sm:w-[126%] md:-mr-8 md:w-[132%]">
+    <div className="relative w-full md:-mr-8 md:w-[132%]">
       {/* Photo clipped to a true circle under the frame */}
       <div
         className="absolute z-[1] overflow-hidden"
