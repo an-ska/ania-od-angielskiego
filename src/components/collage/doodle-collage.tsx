@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /** Hero visual: collage frame mock with photo in the scribbled circle. */
 export function DoodleCollage() {
   // Circle geometry as % of the tight-cropped 558×491 frame (matched to scribble hole)
@@ -22,20 +24,25 @@ export function DoodleCollage() {
         }}
       >
         {/* Pre-cropped circular portrait — straight shirt/shoulder edges already outside the circle */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/ania-hero-circle.png"
           alt="Ania — nauczycielka angielskiego online"
-          className="h-full w-full object-cover"
+          fill
+          priority
+          sizes="(max-width: 768px) 45vw, 28vw"
+          className="object-cover"
         />
       </div>
 
       {/* Full collage frame (phonetics, constellation, boat, airplane, torn paper) */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src="/hero-collage-frame.png"
         alt=""
         aria-hidden
+        width={558}
+        height={491}
+        priority
+        sizes="(max-width: 768px) 90vw, 55vw"
         className="pointer-events-none relative z-[2] h-auto w-full select-none drop-shadow-[4px_8px_20px_rgba(43,58,50,0.12)]"
       />
     </div>

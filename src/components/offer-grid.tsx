@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export type OfferAudience = "youth" | "adults" | "business";
@@ -28,6 +29,11 @@ type OfferFilter = (typeof filters)[number]["id"];
 type OfferGridProps = {
   items: readonly OfferItem[];
 };
+
+/** Strip cache-busting query so next/image can optimize local files. */
+function imageSrc(path: string) {
+  return path.split("?")[0] ?? path;
+}
 
 export function OfferGrid({ items }: OfferGridProps) {
   const [active, setActive] = useState<OfferFilter>("all");
@@ -90,23 +96,26 @@ export function OfferGrid({ items }: OfferGridProps) {
                     spanWide ? "sm:contents" : "mb-2"
                   }`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={leftGraphic}
+                  <Image
+                    src={imageSrc(leftGraphic)}
                     alt=""
                     aria-hidden
-                    className={`shrink-0 object-contain ${
+                    width={150}
+                    height={150}
+                    sizes="150px"
+                    className={`h-auto shrink-0 object-contain ${
                       spanWide
                         ? "w-[38%] max-w-[150px] sm:w-[150px] sm:self-center"
                         : "w-[42%] max-w-[120px]"
                     }`}
                   />
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`${rightGraphic}?v=2`}
-                    alt=""
-                    aria-hidden
-                    className={`shrink-0 object-contain ${
+                  <Image
+                    src={imageSrc(rightGraphic)}
+                    alt={`Ilustracja oferty: ${item.title}`}
+                    width={150}
+                    height={150}
+                    sizes="150px"
+                    className={`h-auto shrink-0 object-contain ${
                       spanWide
                         ? "w-[38%] max-w-[150px] sm:order-3 sm:w-[150px] sm:self-center"
                         : "w-[42%] max-w-[120px]"
@@ -137,6 +146,9 @@ export function OfferGrid({ items }: OfferGridProps) {
             );
           }
 
+          const graphicPath = graphic ? imageSrc(graphic) : null;
+          const graphicWidth = item.largeGraphic ? 230 : 200;
+
           return (
             <article
               key={item.title}
@@ -146,19 +158,20 @@ export function OfferGrid({ items }: OfferGridProps) {
                   : ""
               }`}
             >
-              {graphic ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={graphic}
-                  alt=""
-                  aria-hidden
-                  className={`float-left mb-1 mr-4 object-contain max-sm:float-none max-sm:mx-auto max-sm:mb-4 max-sm:block ${
+              {graphicPath ? (
+                <Image
+                  src={graphicPath}
+                  alt={`Ilustracja oferty: ${item.title}`}
+                  width={graphicWidth}
+                  height={graphicWidth}
+                  sizes={`(max-width: 640px) 78vw, ${graphicWidth}px`}
+                  className={`float-left mb-1 mr-4 h-auto object-contain max-sm:float-none max-sm:mx-auto max-sm:mb-4 max-sm:block ${
                     item.largeGraphic
                       ? "w-[min(50%,230px)] max-sm:w-[78%]"
                       : "w-[min(48%,200px)] max-sm:w-[72%]"
                   }`}
                   style={{
-                    shapeOutside: `url("${graphic}")`,
+                    shapeOutside: `url("${graphicPath}")`,
                     shapeMargin: "0.85rem",
                     shapeImageThreshold: 0.2,
                   }}

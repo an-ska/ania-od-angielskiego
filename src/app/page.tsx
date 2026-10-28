@@ -1,8 +1,9 @@
+import Image from "next/image";
 import { HeroCollage } from "@/components/hero-collage";
 import { OfferGrid, type OfferItem } from "@/components/offer-grid";
 import { ReviewsSlider } from "@/components/reviews-slider";
-import { SectionDivider } from "@/components/section-divider";
 import { SiteHeader } from "@/components/site-header";
+import { siteConfig } from "@/lib/site";
 
 const offerItems: OfferItem[] = [
   {
@@ -242,29 +243,7 @@ const reviews = [
   },
 ] as const;
 
-/** Wklej tu swoje dane kontaktowe i publiczne adresy profili. */
-const contact = {
-  phone: {
-    href: "tel:+48XXXXXXXXX",
-    label: "+48 XXX XXX XXX",
-  },
-  email: {
-    href: "mailto:kontakt@aniaodangielskiego.pl",
-    label: "kontakt@aniaodangielskiego.pl",
-  },
-  maps: {
-    href: "https://maps.google.com",
-    label: "Ania od angielskiego na Mapach",
-  },
-  facebook: {
-    href: "https://www.facebook.com/",
-    label: "@aniaodangielskiego",
-  },
-  ekorepetycje: {
-    href: "https://www.e-korepetycje.net/",
-    label: "Profil na e-korepetycje.net",
-  },
-} as const;
+const contact = siteConfig.contact;
 
 export default function Home() {
   return (
@@ -677,7 +656,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-[680px]">
             <div className="mb-10 text-center">
               <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
-                Napisz lub zadzwoń
+                Kontakt
               </span>
               <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
                 Porozmawiajmy o lekcjach
@@ -685,34 +664,37 @@ export default function Home() {
             </div>
 
             <div className="relative rounded-[24px] border border-white/60 bg-[#fcf9f2] px-5 pb-6 pt-9 shadow-[0_15px_35px_rgba(43,58,50,0.12),0_3px_8px_rgba(43,58,50,0.06)] sm:px-10 sm:pb-10 sm:pt-12">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/paper-clip.png?v=vert3"
+              <Image
+                src="/paper-clip.png"
                 alt=""
                 aria-hidden
-                className="pointer-events-none absolute -top-[21px] left-4 z-10 w-[34px] drop-shadow-[2px_3px_5px_rgba(43,58,50,0.15)]"
+                width={34}
+                height={68}
+                className="pointer-events-none absolute -top-[21px] left-4 z-10 h-auto w-[34px] drop-shadow-[2px_3px_5px_rgba(43,58,50,0.15)]"
               />
 
-              <ul className="m-0 flex list-none flex-col gap-4 p-0">
-                {(
+              {(() => {
+                const items = (
                   [
                     {
-                      key: "phone",
+                      key: "phone" as const,
                       pill: "Telefon",
-                      pillClass: "pill-coral",
+                      pillClass: "pill-coral" as const,
                       href: contact.phone.href,
                       label: contact.phone.label,
+                      ready: contact.phone.ready,
                       external: false,
                       icon: (
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       ),
                     },
                     {
-                      key: "email",
+                      key: "email" as const,
                       pill: "E-mail",
-                      pillClass: "pill-mint",
+                      pillClass: "pill-mint" as const,
                       href: contact.email.href,
                       label: contact.email.label,
+                      ready: contact.email.ready,
                       external: false,
                       icon: (
                         <>
@@ -722,11 +704,12 @@ export default function Home() {
                       ),
                     },
                     {
-                      key: "maps",
+                      key: "maps" as const,
                       pill: "Google Maps",
-                      pillClass: "pill-sand",
+                      pillClass: "pill-sand" as const,
                       href: contact.maps.href,
                       label: contact.maps.label,
+                      ready: contact.maps.ready,
                       external: true,
                       icon: (
                         <>
@@ -736,62 +719,82 @@ export default function Home() {
                       ),
                     },
                     {
-                      key: "facebook",
+                      key: "facebook" as const,
                       pill: "Facebook",
-                      pillClass: "pill-lavender",
+                      pillClass: "pill-lavender" as const,
                       href: contact.facebook.href,
                       label: contact.facebook.label,
+                      ready: contact.facebook.ready,
                       external: true,
                     },
                     {
-                      key: "ekorepetycje",
+                      key: "ekorepetycje" as const,
                       pill: "e-korepetycje.net",
-                      pillClass: "pill-blue",
+                      pillClass: "pill-blue" as const,
                       href: contact.ekorepetycje.href,
                       label: contact.ekorepetycje.label,
+                      ready: contact.ekorepetycje.ready,
                       external: true,
                     },
                   ] as const
-                ).map((item) => (
-                  <li
-                    key={item.key}
-                    className="flex flex-col items-start gap-2 rounded-xl border-b border-dashed border-[rgba(43,58,50,0.12)] px-2 py-3 transition-colors duration-200 hover:bg-white/50 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4"
-                  >
-                    <span
-                      className={`rounded-2xl px-4 py-1.5 text-[13px] font-bold shadow-[0_2px_4px_rgba(0,0,0,0.04)] ${lessonPillStyles[item.pillClass]}`}
-                    >
-                      {item.pill}
-                    </span>
-                    <a
-                      href={item.href}
-                      {...(item.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="group flex items-center gap-2.5 text-[15px] font-bold text-[#1a2621] no-underline transition-all duration-200 hover:translate-x-0.5 hover:text-[#e07a5f] sm:text-base"
-                    >
-                      {"icon" in item ? (
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="shrink-0 text-[#3b5249] transition-colors group-hover:text-[#e07a5f]"
-                          aria-hidden
+                ).filter((item) => item.ready);
+
+                if (items.length === 0) {
+                  return (
+                    <p className="m-0 px-2 text-center text-[15px] leading-relaxed text-[#4a5c53] sm:px-4 sm:text-base">
+                      Kontakt jest w przygotowaniu — po uruchomieniu skrzynki i
+                      profili pojawią się tu konkretne dane do napisania i
+                      umówienia lekcji.
+                    </p>
+                  );
+                }
+
+                return (
+                  <ul className="m-0 flex list-none flex-col gap-4 p-0">
+                    {items.map((item) => (
+                      <li
+                        key={item.key}
+                        className="flex flex-col items-start gap-2 rounded-xl border-b border-dashed border-[rgba(43,58,50,0.12)] px-2 py-3 transition-colors duration-200 hover:bg-white/50 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:px-4"
+                      >
+                        <span
+                          className={`rounded-2xl px-4 py-1.5 text-[13px] font-bold shadow-[0_2px_4px_rgba(0,0,0,0.04)] ${lessonPillStyles[item.pillClass]}`}
                         >
-                          {item.icon}
-                        </svg>
-                      ) : null}
-                      <span className={item.key === "email" ? "break-all" : ""}>
-                        {item.label}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                          {item.pill}
+                        </span>
+                        <a
+                          href={item.href}
+                          {...(item.external
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                          className="group flex items-center gap-2.5 text-[15px] font-bold text-[#1a2621] no-underline transition-all duration-200 hover:translate-x-0.5 hover:text-[#e07a5f] sm:text-base"
+                        >
+                          {"icon" in item ? (
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="shrink-0 text-[#3b5249] transition-colors group-hover:text-[#e07a5f]"
+                              aria-hidden
+                            >
+                              {item.icon}
+                            </svg>
+                          ) : null}
+                          <span
+                            className={item.key === "email" ? "break-all" : ""}
+                          >
+                            {item.label}
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })()}
             </div>
           </div>
           <svg
