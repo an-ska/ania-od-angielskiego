@@ -38,9 +38,9 @@ export const siteConfig = {
       ready: false,
     },
     ekorepetycje: {
-      href: "https://www.e-korepetycje.net/",
+      href: "https://www.e-korepetycje.net/mpania/jezyk-angielski",
       label: "Profil na e-korepetycje.net",
-      ready: false,
+      ready: true,
     },
   },
 } as const;
