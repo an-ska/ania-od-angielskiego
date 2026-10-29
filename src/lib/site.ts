@@ -25,7 +25,7 @@ export const siteConfig = {
     email: {
       href: "mailto:kontakt@ania-od-angielskiego.pl",
       label: "kontakt@ania-od-angielskiego.pl",
-      ready: false,
+      ready: true,
     },
     maps: {
       href: "https://maps.google.com",
