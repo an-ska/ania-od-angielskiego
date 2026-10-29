@@ -1,6 +1,7 @@
 /**
- * Central site config for SEO. When the .pl domain is ready, change only `url`
- * (and redeploy). Contact placeholders stay until real NAP/social links arrive.
+ * Central site config for SEO. When the public URL changes, update `url`
+ * and redeploy. Contact entries with `ready: false` stay out of the page
+ * and out of structured data.
  */
 export const siteConfig = {
   name: "Ania od angielskiego",
@@ -20,7 +21,7 @@ export const siteConfig = {
       href: "tel:+48725272303",
       label: "+48 725 272 303",
       ready: true,
-      /** Shown only after click — keep out of JSON-LD. */
+      /** Visible number waits for a click. JSON-LD still publishes it for Google. */
       reveal: true,
     },
     email: {
@@ -28,10 +29,10 @@ export const siteConfig = {
       label: "kontakt@ania-od-angielskiego.pl",
       ready: true,
     },
-    maps: {
-      href: "https://maps.google.com",
-      label: "Ania od angielskiego na Mapach",
-      ready: false,
+    google: {
+      href: "https://maps.google.com/?cid=13153615850452342287",
+      label: "Profil w Google",
+      ready: true,
     },
     facebook: {
       href: "https://www.facebook.com/",

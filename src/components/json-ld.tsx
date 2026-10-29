@@ -2,22 +2,41 @@ import { siteConfig } from "@/lib/site";
 
 export function JsonLd() {
   const sameAs: string[] = [];
+  if (siteConfig.contact.google.ready) {
+    sameAs.push(siteConfig.contact.google.href);
+  }
   if (siteConfig.contact.facebook.ready) {
     sameAs.push(siteConfig.contact.facebook.href);
   }
   if (siteConfig.contact.ekorepetycje.ready) {
     sameAs.push(siteConfig.contact.ekorepetycje.href);
   }
-  if (siteConfig.contact.maps.ready) {
-    sameAs.push(siteConfig.contact.maps.href);
-  }
+
+  const email = siteConfig.contact.email.ready ? siteConfig.email : undefined;
+  const telephone = siteConfig.contact.phone.ready
+    ? siteConfig.contact.phone.href.replace(/^tel:/, "")
+    : undefined;
+  const contactPoint =
+    email || telephone
+      ? {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          ...(email ? { email } : {}),
+          ...(telephone ? { telephone } : {}),
+          availableLanguage: ["Polish", "English"],
+          areaServed: "PL",
+          url: `${siteConfig.url}/#kontakt`,
+        }
+      : undefined;
 
   const person = {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: "Ania",
     url: siteConfig.url,
-    ...(siteConfig.contact.email.ready ? { email: siteConfig.email } : {}),
+    ...(email ? { email } : {}),
+    ...(telephone ? { telephone } : {}),
+    ...(contactPoint ? { contactPoint } : {}),
     jobTitle: "Nauczycielka języka angielskiego",
     description:
       "Magister filologii angielskiej ze specjalnością nauczycielską. Ponad 10 lat doświadczenia w nauczaniu. Lekcje angielskiego online dla uczniów i dorosłych.",
@@ -43,9 +62,11 @@ export function JsonLd() {
     url: siteConfig.url,
     description: siteConfig.description,
     image: `${siteConfig.url}/ania-hero-circle.png`,
-    ...(siteConfig.contact.email.ready ? { email: siteConfig.email } : {}),
-    ...(siteConfig.contact.phone.ready && !siteConfig.contact.phone.reveal
-      ? { telephone: siteConfig.contact.phone.label }
+    ...(email ? { email } : {}),
+    ...(telephone ? { telephone } : {}),
+    ...(contactPoint ? { contactPoint } : {}),
+    ...(siteConfig.contact.google.ready
+      ? { hasMap: siteConfig.contact.google.href }
       : {}),
     areaServed: {
       "@type": "Country",
@@ -99,9 +120,31 @@ export function JsonLd() {
     },
   };
 
+  const website = {
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    inLanguage: "pl-PL",
+    publisher: { "@id": `${siteConfig.url}/#person` },
+  };
+
+  const webpage = {
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/#webpage`,
+    url: siteConfig.url,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    inLanguage: "pl-PL",
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    about: { "@id": `${siteConfig.url}/#person` },
+    mainEntity: { "@id": `${siteConfig.url}/#service` },
+  };
+
   const graph = {
     "@context": "https://schema.org",
-    "@graph": [person, service],
+    "@graph": [website, webpage, person, service],
   };
 
   return (

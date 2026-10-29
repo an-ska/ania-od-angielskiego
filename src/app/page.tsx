@@ -703,12 +703,12 @@ export default function Home() {
                       ),
                     },
                     {
-                      key: "maps" as const,
-                      pill: "Google Maps",
+                      key: "google" as const,
+                      pill: "Google",
                       pillClass: "pill-sand" as const,
-                      href: contact.maps.href,
-                      label: contact.maps.label,
-                      ready: contact.maps.ready,
+                      href: contact.google.href,
+                      label: contact.google.label,
+                      ready: contact.google.ready,
                       external: true,
                       icon: (
                         <>
@@ -755,7 +755,8 @@ export default function Home() {
                 }
 
                 return (
-                  <ul className="m-0 flex list-none flex-col gap-4 p-0">
+                  <address className="not-italic">
+                    <ul className="m-0 flex list-none flex-col gap-4 p-0">
                     {items.map((item) => (
                       <li
                         key={item.key}
@@ -803,7 +804,8 @@ export default function Home() {
                         )}
                       </li>
                     ))}
-                  </ul>
+                    </ul>
+                  </address>
                 );
               })()}
             </div>
@@ -823,8 +825,16 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#fcf9f2] pb-8 pt-16 text-center text-sm text-[#6a8275] sm:pt-20">
-        © 2026 Ania od angielskiego
+      <footer className="bg-[#fcf9f2] px-5 pb-8 pt-16 text-center text-sm text-[#6a8275] sm:pt-20">
+        <p className="m-0">© 2026 Ania od angielskiego</p>
+        {contact.email.ready ? (
+          <a
+            href={contact.email.href}
+            className="mt-2 inline-block font-medium text-[#3b5249] no-underline hover:text-[#e07a5f]"
+          >
+            {contact.email.label}
+          </a>
+        ) : null}
       </footer>
     </div>
   );
