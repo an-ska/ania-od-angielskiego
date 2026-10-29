@@ -690,7 +690,7 @@ export default function Home() {
                     },
                     {
                       key: "email" as const,
-                      pill: "E-mail",
+                      pill: "e-mail",
                       pillClass: "pill-mint" as const,
                       href: contact.email.href,
                       label: contact.email.label,
