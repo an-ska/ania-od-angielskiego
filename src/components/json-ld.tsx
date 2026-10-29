@@ -44,7 +44,7 @@ export function JsonLd() {
     description: siteConfig.description,
     image: `${siteConfig.url}/ania-hero-circle.png`,
     ...(siteConfig.contact.email.ready ? { email: siteConfig.email } : {}),
-    ...(siteConfig.contact.phone.ready
+    ...(siteConfig.contact.phone.ready && !siteConfig.contact.phone.reveal
       ? { telephone: siteConfig.contact.phone.label }
       : {}),
     areaServed: {

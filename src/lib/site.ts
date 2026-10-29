@@ -17,10 +17,11 @@ export const siteConfig = {
   ratingValue: 5,
   contact: {
     phone: {
-      href: "tel:+48XXXXXXXXX",
-      label: "+48 XXX XXX XXX",
-      /** Set true once a real number is filled in. */
-      ready: false,
+      href: "tel:+48725272303",
+      label: "+48 725 272 303",
+      ready: true,
+      /** Shown only after click — keep out of JSON-LD. */
+      reveal: true,
     },
     email: {
       href: "mailto:kontakt@ania-od-angielskiego.pl",
