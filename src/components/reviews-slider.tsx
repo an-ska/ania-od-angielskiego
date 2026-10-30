@@ -52,27 +52,11 @@ type ReviewsSliderProps = {
   reviews: readonly Review[];
 };
 
-/** Avoid a final page with a single card (e.g. 13 → 3+3+3+2+2). */
 function chunkReviews(reviews: readonly Review[], size: number) {
   const pages: Review[][] = [];
-  let i = 0;
-
-  while (i < reviews.length) {
-    const remaining = reviews.length - i;
-    let take = Math.min(size, remaining);
-
-    if (
-      size > 1 &&
-      remaining > size &&
-      remaining - size === 1
-    ) {
-      take = size - 1;
-    }
-
-    pages.push(reviews.slice(i, i + take));
-    i += take;
+  for (let i = 0; i < reviews.length; i += size) {
+    pages.push(reviews.slice(i, i + size));
   }
-
   return pages.length > 0 ? pages : [[]];
 }
 
@@ -135,7 +119,14 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
               }}
             >
               {pageReviews.map((review, i) => (
-                <div key={`${pageIndex}-${i}-${review.author}`}>
+                <div
+                  key={`${pageIndex}-${i}-${review.author}`}
+                  className={
+                    perPage > 1 && pageReviews.length === 1
+                      ? "col-start-2"
+                      : undefined
+                  }
+                >
                   <ReviewCard review={review} />
                 </div>
               ))}
