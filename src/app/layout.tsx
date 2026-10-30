@@ -33,9 +33,6 @@ export const metadata: Metadata = {
     "angielski w IT",
     "angielski dla dorosłych",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,

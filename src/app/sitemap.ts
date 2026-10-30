@@ -9,5 +9,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${siteConfig.url}${siteConfig.paths.maturaPodstawowa}`,
+      lastModified: siteConfig.contentUpdatedAt,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteConfig.url}${siteConfig.paths.angielskiWIt}`,
+      lastModified: siteConfig.contentUpdatedAt,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }

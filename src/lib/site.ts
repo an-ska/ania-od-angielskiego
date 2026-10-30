@@ -16,6 +16,11 @@ export const siteConfig = {
    * instead of the build timestamp.
    */
   contentUpdatedAt: "2026-10-30",
+  paths: {
+    home: "/",
+    maturaPodstawowa: "/matura-podstawowa",
+    angielskiWIt: "/angielski-w-it",
+  },
   /** Brand inbox — set after domain mail is live. Until then leave ready: false. */
   email: "kontakt@ania-od-angielskiego.pl",
   contact: {

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export type OfferAudience = "youth" | "adults" | "business";
@@ -15,6 +16,8 @@ export type OfferItem = {
   wide?: boolean;
   largeGraphic?: boolean;
   audiences: readonly OfferAudience[];
+  moreHref?: string;
+  moreLabel?: string;
 };
 
 const filters = [
@@ -186,6 +189,16 @@ export function OfferGrid({ items }: OfferGridProps) {
               <p className="mt-3 clear-both text-sm leading-relaxed text-[#5a6b62] max-sm:text-center">
                 {item.audience}
               </p>
+              {item.moreHref && item.moreLabel ? (
+                <p className="mt-3 clear-both max-sm:text-center">
+                  <Link
+                    href={item.moreHref}
+                    className="text-sm font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 transition-colors hover:text-[#e07a5f]"
+                  >
+                    {item.moreLabel}
+                  </Link>
+                </p>
+              ) : null}
             </article>
           );
         })}

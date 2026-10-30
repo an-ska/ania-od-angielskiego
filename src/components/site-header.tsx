@@ -5,12 +5,12 @@ import { useEffect, useId, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site";
 
 const navLinks = [
-  { href: "#o-mnie", label: "O mnie" },
-  { href: "#oferta", label: "Oferta" },
-  { href: "#lekcje", label: "Lekcje" },
-  { href: "#opinie", label: "Opinie" },
-  { href: "#cennik", label: "Cennik" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-mnie", label: "O mnie" },
+  { href: "/#oferta", label: "Oferta" },
+  { href: "/#lekcje", label: "Lekcje" },
+  { href: "/#opinie", label: "Opinie" },
+  { href: "/#cennik", label: "Cennik" },
+  { href: "/#kontakt", label: "Kontakt" },
 ] as const;
 
 export function SiteHeader() {

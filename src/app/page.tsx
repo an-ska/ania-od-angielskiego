@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { HeroCollage } from "@/components/hero-collage";
 import { OfferGrid, type OfferItem } from "@/components/offer-grid";
@@ -5,6 +6,12 @@ import { RevealPhone } from "@/components/reveal-phone";
 import { ReviewsSlider } from "@/components/reviews-slider";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: siteConfig.paths.home,
+  },
+};
 
 const offerItems: OfferItem[] = [
   {
@@ -36,6 +43,8 @@ const offerItems: OfferItem[] = [
       "Dla ósmoklasistów i maturzystów przygotowujących się do poziomu podstawowego.",
     graphic: "/offer-exams.png?v=soft",
     audiences: ["youth"],
+    moreHref: siteConfig.paths.maturaPodstawowa,
+    moreLabel: "Więcej o maturze podstawowej",
   },
   {
     title: "Angielski w praktyce",
@@ -56,6 +65,8 @@ const offerItems: OfferItem[] = [
       "Dla specjalistów IT potrzebujących językowego odświeżenia przed rozmową rekrutacyjną lub spotkaniami z zespołem.",
     graphic: "/offer-it.png?v=raw",
     audiences: ["adults"],
+    moreHref: siteConfig.paths.angielskiWIt,
+    moreLabel: "Więcej o angielskim w IT",
   },
   {
     title: "Wstępna weryfikacja językowa w IT",
