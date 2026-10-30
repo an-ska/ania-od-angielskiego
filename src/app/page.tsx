@@ -28,8 +28,8 @@ const offerItems: OfferItem[] = [
     audiences: ["adults"],
   },
   {
-    title: "Egzaminy pod kontrolą",
-    subtitle: "Egzamin ósmoklasisty i matura podstawowa",
+    title: "Egzamin ósmoklasisty i matura podstawowa",
+    subtitle: "Powtórka, arkusze i strategia na dzień egzaminu",
     description:
       "Powtarzamy najważniejsze zagadnienia, rozwiązujemy zadania egzaminacyjne i ćwiczymy strategie, które pomagają lepiej wykorzystać wiedzę podczas egzaminu. Skupiamy się na słabszych obszarach i regularnie sprawdzamy postępy.",
     audience:
@@ -263,15 +263,18 @@ export default function Home() {
           <div className="relative mx-auto flex w-full max-w-[1040px] flex-col px-5 pb-8 sm:px-6 sm:pb-12 md:flex-row md:items-center md:pb-20 md:pt-4">
             <div className="z-[2] w-full shrink-0 pt-1 text-center animate-[fade-up_0.7s_ease-out_both] md:w-1/2 md:pt-0 md:pr-4 md:text-left">
               <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-3.5 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)] sm:mb-6 sm:px-4 sm:py-2 sm:text-[15px]">
-                Angielski online
+                Korepetycje online
               </span>
-              <h1 className="mb-3 font-display text-[clamp(2.25rem,9vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#263830] sm:mb-6">
-                Ania od angielskiego
+              <h1 className="mb-3 font-display text-[clamp(2.25rem,9vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#263830] sm:mb-4">
+                {siteConfig.name}
               </h1>
+              <p className="mb-4 text-sm font-semibold text-[#3b5249] sm:mb-5 sm:text-[15px]">
+                13 opinii · 5/5 · od 80 zł / 60 min
+              </p>
               <p className="mx-auto mb-5 max-w-[22rem] text-[0.98rem] leading-[1.55] text-[#4a5c53] sm:mb-9 sm:max-w-[28rem] sm:text-[1.2rem] sm:leading-[1.65] md:mx-0 md:max-w-[520px]">
-                Angielski dla uczniów i dorosłych: od szkolnych zaległości i
-                egzaminów po swobodną komunikację i odkrywanie języka na własnych
-                zasadach.
+                Korepetycje z angielskiego dla uczniów i dorosłych: od szkolnych
+                zaległości i egzaminów po swobodną komunikację, angielski w IT i
+                odkrywanie języka na własnych zasadach.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 md:justify-start">
                 <a
@@ -392,7 +395,7 @@ export default function Home() {
                 Co możemy razem zrobić?
               </span>
               <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
-                Oferta
+                Oferta korepetycji z angielskiego
               </h2>
             </div>
 
@@ -484,10 +487,10 @@ export default function Home() {
           <div className="relative mx-auto max-w-[1140px]">
             <div className="mb-12 text-center sm:mb-14">
               <span className="mb-3 inline-block rounded-[20px] bg-[#f4efe6] px-4 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)]">
-                Opinie kursantów
+                Co mówią o mnie kursanci?
               </span>
               <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
-                Co mówią o mnie kursanci?
+                Opinie o korepetycjach z angielskiego
               </h2>
               <p className="mt-3 text-base font-semibold text-[#d9785a] sm:text-[1.0625rem]">
                 13 opinii · 5/5
@@ -522,7 +525,7 @@ export default function Home() {
                 Formy współpracy
               </span>
               <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
-                Cennik
+                Cennik korepetycji angielskiego online
               </h2>
               <p className="mx-auto max-w-xl text-[17px] leading-relaxed text-[#4a5c53]">
                 Wszystkie lekcje odbywają się online i trwają 60 minut

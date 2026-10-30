@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Ania od angielskiego — lekcje angielskiego online";
+export const alt = "Ania od angielskiego — korepetycje angielskiego online";
 export const size = {
   width: 1200,
   height: 630,
@@ -62,7 +62,7 @@ export default function OpenGraphImage() {
               maxWidth: 820,
             }}
           >
-            Korepetycje i indywidualne lekcje angielskiego online
+            Korepetycje angielskiego online od 80 zł · ósmoklasista · matura · IT
           </div>
         </div>
 

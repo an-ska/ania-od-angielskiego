@@ -7,10 +7,9 @@ export const siteConfig = {
   name: "Ania od angielskiego",
   /** Canonical production URL (apex redirects to www on Vercel). */
   url: "https://www.ania-od-angielskiego.pl",
-  title:
-    "Ania od angielskiego | Korepetycje i lekcje angielskiego online",
+  title: "Korepetycje angielskiego online | Ania od angielskiego",
   description:
-    "Indywidualne lekcje angielskiego online: ósmoklasista, matura, angielski w IT i dla dorosłych. Magister filologii, 10+ lat doświadczenia. Umów lekcję.",
+    "Korepetycje angielskiego online od 80 zł. Ósmoklasista, matura podstawowa, angielski w IT. Magister filologii, ponad 10 lat, opinie 5/5.",
   locale: "pl_PL",
   /**
    * Bump when substantive page content changes. Used as sitemap lastmod
