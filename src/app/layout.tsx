@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, DM_Sans, Fraunces } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -11,11 +11,6 @@ const dmSans = DM_Sans({
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
-  subsets: ["latin", "latin-ext"],
-});
-
-const caveat = Caveat({
-  variable: "--font-caveat",
   subsets: ["latin", "latin-ext"],
 });
 
@@ -80,7 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pl"
-      className={`${dmSans.variable} ${fraunces.variable} ${caveat.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <JsonLd />

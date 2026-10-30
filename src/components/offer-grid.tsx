@@ -170,11 +170,6 @@ export function OfferGrid({ items }: OfferGridProps) {
                       ? "w-[min(50%,230px)] max-sm:w-[78%]"
                       : "w-[min(48%,200px)] max-sm:w-[72%]"
                   }`}
-                  style={{
-                    shapeOutside: `url("${graphicPath}")`,
-                    shapeMargin: "0.85rem",
-                    shapeImageThreshold: 0.2,
-                  }}
                 />
               ) : null}
               <h3 className="font-display text-[1.625rem] font-bold leading-snug text-[#263830] max-sm:text-center sm:text-[1.75rem]">
