@@ -14,8 +14,6 @@ export const siteConfig = {
   locale: "pl_PL",
   /** Brand inbox — set after domain mail is live. Until then leave ready: false. */
   email: "kontakt@ania-od-angielskiego.pl",
-  reviewCount: 13,
-  ratingValue: 5,
   contact: {
     phone: {
       href: "tel:+48725272303",

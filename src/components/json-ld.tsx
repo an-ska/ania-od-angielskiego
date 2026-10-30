@@ -29,11 +29,15 @@ export function JsonLd() {
         }
       : undefined;
 
+  const personImage = `${siteConfig.url}/ania-hero-circle.png`;
+
   const person = {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
-    name: "Ania",
+    name: siteConfig.name,
+    alternateName: "Ania",
     url: siteConfig.url,
+    image: personImage,
     ...(email ? { email } : {}),
     ...(telephone ? { telephone } : {}),
     ...(contactPoint ? { contactPoint } : {}),
@@ -56,32 +60,19 @@ export function JsonLd() {
   };
 
   const service = {
-    "@type": "ProfessionalService",
+    "@type": "Service",
     "@id": `${siteConfig.url}/#service`,
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    image: `${siteConfig.url}/ania-hero-circle.png`,
-    ...(email ? { email } : {}),
-    ...(telephone ? { telephone } : {}),
-    ...(contactPoint ? { contactPoint } : {}),
-    ...(siteConfig.contact.google.ready
-      ? { hasMap: siteConfig.contact.google.href }
-      : {}),
+    image: personImage,
+    serviceType: "Korepetycje języka angielskiego online",
     areaServed: {
       "@type": "Country",
       name: "Poland",
     },
     availableLanguage: ["Polish", "English"],
     provider: { "@id": `${siteConfig.url}/#person` },
-    priceRange: "80-180 PLN",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: siteConfig.ratingValue,
-      reviewCount: siteConfig.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Lekcje angielskiego online",
@@ -95,6 +86,7 @@ export function JsonLd() {
           price: "120",
           priceCurrency: "PLN",
           description: "60 minut indywidualnych zajęć online",
+          url: `${siteConfig.url}/#cennik`,
         },
         {
           "@type": "Offer",
@@ -105,6 +97,7 @@ export function JsonLd() {
           price: "180",
           priceCurrency: "PLN",
           description: "60 minut zajęć online pod komunikację w IT",
+          url: `${siteConfig.url}/#cennik`,
         },
         {
           "@type": "Offer",
@@ -115,6 +108,7 @@ export function JsonLd() {
           price: "80",
           priceCurrency: "PLN",
           description: "60 minut / osoba — zajęcia w parze online",
+          url: `${siteConfig.url}/#cennik`,
         },
       ],
     },
