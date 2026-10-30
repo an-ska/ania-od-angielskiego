@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
+import { siteConfig } from "@/lib/site";
 
 const navLinks = [
   { href: "#o-mnie", label: "O mnie" },
@@ -69,10 +70,10 @@ export function SiteHeader() {
           <div className="flex items-center justify-between gap-3 px-4 py-2.5 sm:gap-4 sm:px-7 sm:py-3">
             <Link
               href="/"
-              className="font-display text-xl font-bold tracking-tight text-[#3b5249] transition-opacity hover:opacity-80"
+              className="min-w-0 truncate font-display text-base font-bold tracking-tight text-[#3b5249] transition-opacity hover:opacity-80 sm:text-lg md:text-xl"
               onClick={() => setOpen(false)}
             >
-              Ania
+              {siteConfig.name}
             </Link>
 
             <nav className="hidden items-center gap-7 text-[15px] font-medium text-[#3b5249] md:flex">

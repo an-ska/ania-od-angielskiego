@@ -91,7 +91,7 @@ const lessonApproachItems = [
   {
     title: "Podejście dopasowane do ucznia",
     description:
-      "Każdy z nas uczy sie inaczej, ma własne tempo pracy, inne potrzeby i cele. Dobieram materiały oraz ćwiczenia do poziomu ucznia i tego, nad czym aktualnie pracujemy. Mam też doświadczenie w pracy z osobami z dysleksją.",
+      "Każdy z nas uczy się inaczej, ma własne tempo pracy, inne potrzeby i cele. Dobieram materiały oraz ćwiczenia do poziomu ucznia i tego, nad czym aktualnie pracujemy. Mam też doświadczenie w pracy z osobami z dysleksją.",
     pill: "Indywidualne podejście",
     badge: "pill-mint",
   },
@@ -105,7 +105,7 @@ const lessonApproachItems = [
   {
     title: "Stały feedback i monitorowanie postępów",
     description:
-      "Otrzymujesz jasną informację zwrotną o omawianym materiale, postępach i zagadnieniach, nad którymi warto jeszcze popracować. W przypadku młodszych uczniów w stałym kontakcie są również rodzice dzięki temu każdy wie, nad czym pracujemy i jak przebiega nauka.",
+      "Otrzymujesz jasną informację zwrotną o omawianym materiale, postępach i zagadnieniach, nad którymi warto jeszcze popracować. W przypadku młodszych uczniów w stałym kontakcie są również rodzice, dzięki temu każdy wie, nad czym pracujemy i jak przebiega nauka.",
     pill: "Feedback",
     badge: "pill-blue",
   },

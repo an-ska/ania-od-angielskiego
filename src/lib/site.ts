@@ -12,6 +12,11 @@ export const siteConfig = {
   description:
     "Indywidualne lekcje angielskiego online: ósmoklasista, matura, angielski w IT i dla dorosłych. Magister filologii, 10+ lat doświadczenia. Umów lekcję.",
   locale: "pl_PL",
+  /**
+   * Bump when substantive page content changes. Used as sitemap lastmod
+   * instead of the build timestamp.
+   */
+  contentUpdatedAt: "2026-10-30",
   /** Brand inbox — set after domain mail is live. Until then leave ready: false. */
   email: "kontakt@ania-od-angielskiego.pl",
   contact: {
