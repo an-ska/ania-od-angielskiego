@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+  verification: {
+    google: "vCeo7opmJ8Cvrbj_GnM5YgQj3bLa5b6iJpVAnTr8_X4",
+  },
   category: "education",
   appleWebApp: {
     title: siteConfig.name,
