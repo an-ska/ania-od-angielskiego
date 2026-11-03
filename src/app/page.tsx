@@ -253,6 +253,11 @@ const reviews = [
     quote:
       "Bardzo profesjonalne podejście do ucznia. Praca na lekcjach jest ciekawa w miłej atmosferze. Podchodzi do swojego zawodu z pasją. Udostępnia pomocne materiały do nauki. Jestem bardzo zadowolona. Polecam",
   },
+  {
+    author: "Martyna",
+    quote:
+      "Polecam! Profesjonalne podejście, przyjemna atmosfera podczas lekcji :)",
+  },
 ] as const;
 
 const contact = siteConfig.contact;
@@ -280,7 +285,7 @@ export default function Home() {
                 {siteConfig.name}
               </h1>
               <p className="mb-4 text-sm font-semibold text-[#3b5249] sm:mb-5 sm:text-[15px]">
-                13 opinii · 5/5 · od 80 zł / 60 min
+                14 opinii · 5/5 · od 80 zł / 60 min
               </p>
               <p className="mx-auto mb-5 max-w-[22rem] text-[0.98rem] leading-[1.55] text-[#4a5c53] sm:mb-9 sm:max-w-[28rem] sm:text-[1.2rem] sm:leading-[1.65] md:mx-0 md:max-w-[520px]">
                 Korepetycje z angielskiego dla uczniów i dorosłych: od szkolnych
@@ -504,7 +509,7 @@ export default function Home() {
                 Opinie o korepetycjach z angielskiego
               </h2>
               <p className="mt-3 text-base font-semibold text-[#d9785a] sm:text-[1.0625rem]">
-                13 opinii · 5/5
+                14 opinii · 5/5
               </p>
             </div>
 
