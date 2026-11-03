@@ -208,8 +208,8 @@ export default function MaturaPodstawowaPage() {
                   maturę podstawową z angielskiego
                 </strong>
                 : uczniów liceum i technikum, którzy chcą uporządkować materiał,
-                podnieść pewność na arkuszu albo po prostu przestać uczyć się w
-                chaosie przed terminem.
+                czuć się pewniej przy pracy z arkuszem egzaminacyjnym albo po
+                prostu przestać uczyć się w chaosie przed terminem.
               </p>
               <p>
                 Pasuje też, jeśli „ogarniasz podstawy”, ale przy egzaminie brakuje
