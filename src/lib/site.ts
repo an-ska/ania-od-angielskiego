@@ -9,7 +9,7 @@ export const siteConfig = {
   url: "https://www.ania-od-angielskiego.pl",
   title: "Korepetycje angielskiego online | Ania od angielskiego",
   description:
-    "Korepetycje angielskiego online od 80 zł. Ósmoklasista, matura podstawowa, angielski w IT. Magister filologii, ponad 10 lat, opinie 5/5.",
+    "Korepetycje angielskiego online od 80 zł / 60 min. Ósmoklasista, matura podstawowa, angielski w IT. Magister filologii, 10+ lat doświadczenia, opinie 5/5.",
   locale: "pl_PL",
   /**
    * Bump when substantive page content changes. Used as sitemap lastmod
