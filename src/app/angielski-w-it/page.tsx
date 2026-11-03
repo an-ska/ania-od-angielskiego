@@ -49,7 +49,7 @@ const focusItems = [
   },
   {
     title: "Feedback pod Twój kontekst",
-    text: "Jestem też programistką frontend, więc łatwiej złapać, o czym mówisz w pracy. Na lekcji skupiamy się na angielskim, a nie na tłumaczeniu technologii.",
+    text: "Jestem też programistką frontend, więc łatwiej mi złapać, o czym mówisz w pracy. Na lekcji skupiamy się na angielskim, a nie na tłumaczeniu technologii.",
   },
 ] as const;
 
@@ -275,7 +275,7 @@ export default function AngielskiWItPage() {
               <p>
                 Dla firm potrzebujących szybkiego sprawdzenia angielskiego
                 kandydata jest też wstępna weryfikacja językowa. Szczegóły i
-                pozostałe formy są na{" "}
+                pozostałe formy są w{" "}
                 <a
                   href={`${siteConfig.paths.home}#cennik`}
                   className="font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 hover:text-[#e07a5f]"

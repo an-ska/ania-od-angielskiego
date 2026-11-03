@@ -116,7 +116,7 @@ const lessonApproachItems = [
   {
     title: "Stały feedback i monitorowanie postępów",
     description:
-      "Otrzymujesz jasną informację zwrotną o omawianym materiale, postępach i zagadnieniach, nad którymi warto jeszcze popracować. W przypadku młodszych uczniów w stałym kontakcie są również rodzice, dzięki temu każdy wie, nad czym pracujemy i jak przebiega nauka.",
+      "Otrzymujesz jasną informację zwrotną o omawianym materiale, postępach i zagadnieniach, nad którymi warto jeszcze popracować. Jestem w stałym kontakcie zarówno z uczniem, jak i z rodzicami, żeby wszyscy wiedzieli, nad czym pracujemy i jak przebiega nauka.",
     pill: "Feedback",
     badge: "pill-blue",
   },

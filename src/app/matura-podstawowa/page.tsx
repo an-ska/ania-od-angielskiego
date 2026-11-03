@@ -48,8 +48,8 @@ const focusItems = [
     text: "Matura podstawowa to też zarządzanie czasem i spokojem. Ćwiczymy kolejność zadań, oznaczanie pewnych odpowiedzi i to, jak wracać do trudniejszych punktów bez gubienia punktów łatwych.",
   },
   {
-    title: "Regularny feedback",
-    text: "Po zajęciach wiesz, nad czym pracujemy i co poprawić przed kolejną lekcją. Przy młodszych maturzystach mogę być też w kontakcie z rodzicami, jeśli tego potrzebujecie.",
+    title: "Jasna informacja zwrotna",
+    text: "Po zajęciach wiesz, nad czym pracujemy i co warto poprawić przed kolejną lekcją. Jestem w stałym kontakcie zarówno z uczniem, jak i z rodzicami, żeby wszyscy wiedzieli, jak idzie nauka.",
   },
 ] as const;
 
@@ -174,9 +174,9 @@ export default function MaturaPodstawowaPage() {
               Matura podstawowa z angielskiego online
             </h1>
             <p className="mx-auto mb-8 max-w-[40rem] text-[1.05rem] leading-[1.65] text-[#4a5c53] md:text-[1.15rem]">
-              Korepetycje dla maturzystów, którzy chcą spokojnie domknąć poziom
-              podstawowy: powtórka materiału, arkusze i jasny plan zamiast nauki
-              „na ślepo”.
+              Korepetycje dla maturzystów, którzy chcą spokojnie przygotować się
+              do matury podstawowej: powtórka materiału, arkusze i jasny plan
+              zamiast nauki „na ślepo”.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
@@ -285,7 +285,7 @@ export default function MaturaPodstawowaPage() {
               <p>
                 Bez pakietów „na siłę”: umawiamy rytm pod Ciebie (np. raz w
                 tygodniu albo częściej bliżej terminu). Szczegóły innych form są
-                też na{" "}
+                też w{" "}
                 <a
                   href={`${siteConfig.paths.home}#cennik`}
                   className="font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 hover:text-[#e07a5f]"
