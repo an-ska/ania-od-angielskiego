@@ -15,7 +15,7 @@ export const siteConfig = {
    * Bump when substantive page content changes. Used as sitemap lastmod
    * instead of the build timestamp.
    */
-  contentUpdatedAt: "2026-10-30",
+  contentUpdatedAt: "2026-11-03",
   paths: {
     home: "/",
     maturaPodstawowa: "/matura-podstawowa",

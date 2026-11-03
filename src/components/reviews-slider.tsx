@@ -11,7 +11,7 @@ function ReviewCard({ review }: { review: Review }) {
   const initial = review.author.trim().charAt(0).toUpperCase();
 
   return (
-    <figure className="relative mt-[35px] flex h-[30rem] min-w-0 flex-col overflow-visible rounded-[20px] bg-[#fcf9f2] px-8 pb-[30px] pt-[55px] shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)]">
+    <figure className="relative mt-[35px] flex h-full min-w-0 flex-col rounded-[20px] bg-[#fcf9f2] px-8 pb-[30px] pt-[55px] shadow-[0_6px_18px_rgba(43,58,50,0.08)] transition-[transform,box-shadow] duration-250 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(43,58,50,0.12)]">
       <span
         className="pointer-events-none absolute -top-[27px] left-7 -rotate-[4deg] font-serif text-[120px] leading-none text-[#e07a5f] drop-shadow-[3px_4px_6px_rgba(43,58,50,0.12)]"
         aria-hidden
@@ -19,11 +19,9 @@ function ReviewCard({ review }: { review: Review }) {
         “
       </span>
 
-      <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-width:thin]">
-        <blockquote className="m-0 text-left text-[15px] leading-[1.65] text-[#3b5249]">
-          {review.quote}
-        </blockquote>
-      </div>
+      <blockquote className="m-0 flex-1 text-left text-[15px] leading-[1.65] text-[#3b5249]">
+        {review.quote}
+      </blockquote>
 
       <div className="mt-6 flex shrink-0 flex-col gap-3">
         <div
@@ -61,8 +59,8 @@ function chunkReviews(reviews: readonly Review[], size: number) {
 }
 
 /**
- * All reviews stay in the HTML. Layout uses the original overflow-visible
- * grid (no carousel clip). Page changes slide in instead of fading up.
+ * All reviews stay in the HTML. Cards grow with quote length (no inner scroll).
+ * Page changes slide in instead of fading up.
  */
 export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   const [perPage, setPerPage] = useState(3);
@@ -123,8 +121,8 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
                   key={`${pageIndex}-${i}-${review.author}`}
                   className={
                     perPage > 1 && pageReviews.length === 1
-                      ? "col-start-2"
-                      : undefined
+                      ? "col-start-2 flex h-full flex-col"
+                      : "flex h-full flex-col"
                   }
                 >
                   <ReviewCard review={review} />
