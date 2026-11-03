@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { DM_Sans, Fraunces } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site";
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd />
         {children}
       </body>
+      <GoogleAnalytics gaId={siteConfig.googleAnalyticsId} />
     </html>
   );
 }

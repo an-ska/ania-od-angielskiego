@@ -21,6 +21,8 @@ export const siteConfig = {
     maturaPodstawowa: "/matura-podstawowa",
     angielskiWIt: "/angielski-w-it",
   },
+  /** GA4 measurement ID (public; appears in page source). */
+  googleAnalyticsId: "G-08K3YRJ3KZ",
   /** Brand inbox — set after domain mail is live. Until then leave ready: false. */
   email: "kontakt@ania-od-angielskiego.pl",
   contact: {
