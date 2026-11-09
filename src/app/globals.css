@@ -44,6 +44,14 @@ body {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
+@layer base {
+  a[href],
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
 ::selection {
   background: color-mix(in srgb, var(--cobalt) 22%, white);
   color: var(--foreground);

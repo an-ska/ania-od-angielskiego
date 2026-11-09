@@ -59,8 +59,8 @@ function chunkReviews(reviews: readonly Review[], size: number) {
 }
 
 /**
- * All reviews stay in the HTML. Cards grow with quote length (no inner scroll).
- * Page changes slide in instead of fading up.
+ * All review pages stack in one CSS grid cell so the section height
+ * equals the tallest page; cards stretch to fill that height.
  */
 export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
   const [perPage, setPerPage] = useState(3);
@@ -94,44 +94,50 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
 
   return (
     <div>
-      {pages.map((pageReviews, pageIndex) => {
-        const active = pageIndex === safePage;
-        return (
-          <div
-            key={pageIndex}
-            className={active ? undefined : "hidden"}
-            aria-hidden={active ? undefined : true}
-          >
+      <div className="grid">
+        {pages.map((pageReviews, pageIndex) => {
+          const active = pageIndex === safePage;
+          return (
             <div
-              key={active ? `${safePage}-${direction}` : "idle"}
+              key={pageIndex}
               className={
                 active
-                  ? `grid items-stretch gap-6 overflow-visible sm:gap-7 ${slideClass}`
-                  : "grid items-stretch gap-6 overflow-visible sm:gap-7"
+                  ? "col-start-1 row-start-1"
+                  : "col-start-1 row-start-1 invisible pointer-events-none"
               }
-              style={{
-                gridTemplateColumns:
-                  perPage === 1
-                    ? "minmax(0, 1fr)"
-                    : "repeat(3, minmax(0, 1fr))",
-              }}
+              aria-hidden={active ? undefined : true}
             >
-              {pageReviews.map((review, i) => (
-                <div
-                  key={`${pageIndex}-${i}-${review.author}`}
-                  className={
-                    perPage > 1 && pageReviews.length === 1
-                      ? "col-start-2 flex h-full flex-col"
-                      : "flex h-full flex-col"
-                  }
-                >
-                  <ReviewCard review={review} />
-                </div>
-              ))}
+              <div
+                key={active ? `${safePage}-${direction}` : "idle"}
+                className={
+                  active
+                    ? `grid h-full items-stretch gap-6 overflow-visible sm:gap-7 ${slideClass}`
+                    : "grid h-full items-stretch gap-6 overflow-visible sm:gap-7"
+                }
+                style={{
+                  gridTemplateColumns:
+                    perPage === 1
+                      ? "minmax(0, 1fr)"
+                      : "repeat(3, minmax(0, 1fr))",
+                }}
+              >
+                {pageReviews.map((review, i) => (
+                  <div
+                    key={`${pageIndex}-${i}-${review.author}`}
+                    className={
+                      perPage > 1 && pageReviews.length === 1
+                        ? "col-start-2 flex h-full min-h-0 flex-col"
+                        : "flex h-full min-h-0 flex-col"
+                    }
+                  >
+                    <ReviewCard review={review} />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
 
       <div className="relative z-10 mt-12 flex flex-col items-center gap-3">
         <div className="flex items-center gap-3" aria-label="Strony opinii">
@@ -142,7 +148,7 @@ export function ReviewsSlider({ reviews }: ReviewsSliderProps) {
               aria-label={`Strona ${i + 1} z ${pageCount}`}
               aria-current={i === safePage ? "true" : undefined}
               onClick={() => goToPage(i)}
-              className={`size-3 rounded-full transition-colors sm:size-3.5 ${
+              className={`size-3 cursor-pointer rounded-full transition-colors sm:size-3.5 ${
                 i === safePage
                   ? "border border-[#3b5249] bg-[#3b5249]"
                   : "border border-[rgba(59,82,73,0.35)] bg-transparent hover:border-[#3b5249]"

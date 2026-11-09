@@ -62,7 +62,7 @@ export function OfferGrid({ items }: OfferGridProps) {
               type="button"
               onClick={() => setActive(filter.id)}
               aria-pressed={isActive}
-              className={`rounded-[20px] px-4 py-2 text-[13px] font-semibold transition-[transform,box-shadow,background-color,color] duration-200 sm:px-5 sm:text-sm ${
+              className={`cursor-pointer rounded-[20px] px-4 py-2 text-[13px] font-semibold transition-[transform,box-shadow,background-color,color] duration-200 sm:px-5 sm:text-sm ${
                 isActive
                   ? "bg-[#2b3a32] text-[#fcf9f2] shadow-[0_4px_12px_rgba(43,58,50,0.18)]"
                   : "bg-[#f4efe6] text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 hover:shadow-[0_4px_10px_rgba(43,58,50,0.1)]"

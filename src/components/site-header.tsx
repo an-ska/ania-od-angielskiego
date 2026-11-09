@@ -90,7 +90,7 @@ export function SiteHeader() {
 
             <button
               type="button"
-              className="flex size-10 items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32] md:hidden"
+              className="flex size-10 cursor-pointer items-center justify-center rounded-full text-[#3b5249] transition-colors hover:bg-[#f4efe6] hover:text-[#2b3a32] md:hidden"
               aria-expanded={open}
               aria-controls={panelId}
               aria-label={open ? "Zamknij menu" : "Otwórz menu"}
