@@ -698,7 +698,7 @@ export default function Home() {
                 aria-hidden
                 width={34}
                 height={68}
-                className="pointer-events-none absolute -top-[21px] left-4 z-10 h-auto w-[34px] drop-shadow-[2px_3px_5px_rgba(43,58,50,0.15)]"
+                className="pointer-events-none absolute -top-[21px] right-4 z-10 h-auto w-[34px] drop-shadow-[2px_3px_5px_rgba(43,58,50,0.15)] sm:left-4 sm:right-auto"
               />
 
               {(() => {
