@@ -274,7 +274,7 @@ export default function AngielskiWItPage() {
               </p>
               <p>
                 Dla firm potrzebujących szybkiego sprawdzenia angielskiego
-                kandydata jest też wstępna weryfikacja językowa. Szczegóły i
+                kandydata prowadzę też wstępną weryfikację językową. Szczegóły i
                 pozostałe formy są w{" "}
                 <a
                   href={`${siteConfig.paths.home}#cennik`}

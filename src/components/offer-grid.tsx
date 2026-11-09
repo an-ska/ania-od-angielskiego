@@ -18,6 +18,7 @@ export type OfferItem = {
   audiences: readonly OfferAudience[];
   moreHref?: string;
   moreLabel?: string;
+  moreLinks?: readonly { href: string; label: string }[];
 };
 
 const filters = [
@@ -189,7 +190,19 @@ export function OfferGrid({ items }: OfferGridProps) {
               <p className="mt-3 clear-both text-sm leading-relaxed text-[#5a6b62] max-sm:text-center">
                 {item.audience}
               </p>
-              {item.moreHref && item.moreLabel ? (
+              {item.moreLinks && item.moreLinks.length > 0 ? (
+                <div className="mt-3 clear-both flex flex-col gap-1.5 max-sm:items-center sm:items-start">
+                  {item.moreLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-sm font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 transition-colors hover:text-[#e07a5f]"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : item.moreHref && item.moreLabel ? (
                 <p className="mt-3 clear-both max-sm:text-center">
                   <Link
                     href={item.moreHref}

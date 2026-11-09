@@ -41,7 +41,7 @@ const focusItems = [
   },
   {
     title: "Słabe punkty zamiast „całego podręcznika”",
-    text: "Na początku sprawdzamy, co już działa, a co blokuje wynik. Potem układamy plan wokół braków: gramatyka, słownictwo, rozumienie tekstu albo pisanie, bez marnowania czasu na to, co jest opanowane.",
+    text: "Na początku sprawdzamy, co już działa, a nad czym trzeba jeszcze popracować. Potem układamy plan wokół braków: gramatyka, słownictwo, rozumienie tekstu albo pisanie, bez marnowania czasu na to, co jest opanowane.",
   },
   {
     title: "Strategie na czas i stres",
@@ -168,7 +168,7 @@ export default function MaturaPodstawowaPage() {
               Matura podstawowa
             </p>
             <span className="mb-4 inline-block rounded-[20px] bg-[#f4efe6] px-3.5 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
-              Korepetycje online, 120 zł / 60 min
+              Online · 120 zł / 60 min indywidualnie · 80 zł / osoba w parze
             </span>
             <h1 className="mb-4 font-display text-[clamp(2rem,6vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-[#263830]">
               Matura podstawowa z angielskiego online
@@ -279,8 +279,7 @@ export default function MaturaPodstawowaPage() {
                 <strong className="font-semibold text-[#1a2621]">
                   80 zł / osoba
                 </strong>
-                , jeśli obie osoby idą na poziom podstawowy i mają zbliżony
-                punkt wyjścia.
+                , jeśli obie osoby są na podobnym poziomie.
               </p>
               <p>
                 Bez pakietów „na siłę”: umawiamy rytm pod Ciebie (np. raz w
@@ -352,6 +351,13 @@ export default function MaturaPodstawowaPage() {
                 className="font-semibold text-[#3b5249] no-underline hover:text-[#e07a5f]"
               >
                 Zobacz całą ofertę na stronie głównej
+              </Link>
+              {" · "}
+              <Link
+                href={siteConfig.paths.egzaminOsmoklasisty}
+                className="font-semibold text-[#3b5249] no-underline hover:text-[#e07a5f]"
+              >
+                Egzamin ósmoklasisty
               </Link>
             </p>
           </div>

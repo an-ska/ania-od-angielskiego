@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${siteConfig.url}${siteConfig.paths.egzaminOsmoklasisty}`,
+      lastModified: siteConfig.contentUpdatedAt,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${siteConfig.url}${siteConfig.paths.maturaPodstawowa}`,
       lastModified: siteConfig.contentUpdatedAt,
       changeFrequency: "monthly",

@@ -43,8 +43,16 @@ const offerItems: OfferItem[] = [
       "Dla ósmoklasistów i maturzystów przygotowujących się do poziomu podstawowego.",
     graphic: "/offer-exams.png?v=soft",
     audiences: ["youth"],
-    moreHref: siteConfig.paths.maturaPodstawowa,
-    moreLabel: "Więcej o maturze podstawowej",
+    moreLinks: [
+      {
+        href: siteConfig.paths.egzaminOsmoklasisty,
+        label: "Więcej o egzaminie ósmoklasisty",
+      },
+      {
+        href: siteConfig.paths.maturaPodstawowa,
+        label: "Więcej o maturze podstawowej",
+      },
+    ],
   },
   {
     title: "Angielski w praktyce",
