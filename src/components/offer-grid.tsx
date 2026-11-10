@@ -106,7 +106,7 @@ export function OfferGrid({ items }: OfferGridProps) {
                     aria-hidden
                     width={150}
                     height={150}
-                    sizes="150px"
+                    sizes="(max-width: 640px) 42vw, 150px"
                     className={`h-auto shrink-0 object-contain ${
                       spanWide
                         ? "w-[38%] max-w-[150px] sm:w-[150px] sm:self-center"
@@ -118,7 +118,7 @@ export function OfferGrid({ items }: OfferGridProps) {
                     alt={`Ilustracja oferty: ${item.title}`}
                     width={150}
                     height={150}
-                    sizes="150px"
+                    sizes="(max-width: 640px) 42vw, 150px"
                     className={`h-auto shrink-0 object-contain ${
                       spanWide
                         ? "w-[38%] max-w-[150px] sm:order-3 sm:w-[150px] sm:self-center"
@@ -168,7 +168,11 @@ export function OfferGrid({ items }: OfferGridProps) {
                   alt={`Ilustracja oferty: ${item.title}`}
                   width={graphicWidth}
                   height={graphicWidth}
-                  sizes={`(max-width: 640px) 78vw, ${graphicWidth}px`}
+                  sizes={
+                    item.largeGraphic
+                      ? "(max-width: 640px) 78vw, 230px"
+                      : "(max-width: 640px) 72vw, 200px"
+                  }
                   className={`float-left mb-1 mr-4 h-auto object-contain max-sm:float-none max-sm:mx-auto max-sm:mb-4 max-sm:block ${
                     item.largeGraphic
                       ? "w-[min(50%,230px)] max-sm:w-[78%]"
