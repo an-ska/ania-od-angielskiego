@@ -345,7 +345,7 @@ export default function EgzaminOsmoklasistyPage() {
             >
               Przejdź do kontaktu
             </a>
-            <p className="mt-8 text-sm text-[#6a8275]">
+            <p className="mt-8 text-sm text-[#4a5c53]">
               <Link
                 href={siteConfig.paths.home}
                 className="font-semibold text-[#3b5249] no-underline hover:text-[#e07a5f]"
@@ -364,7 +364,7 @@ export default function EgzaminOsmoklasistyPage() {
         </section>
       </main>
 
-      <footer className="relative overflow-visible bg-[#dcd0e5] px-5 pb-8 pt-16 text-center text-sm text-[#6a8275] sm:pt-20">
+      <footer className="relative overflow-visible bg-[#dcd0e5] px-5 pb-8 pt-16 text-center text-sm text-[#4a5c53] sm:pt-20">
         <SectionWave color={lavender} position="top" />
         <p className="relative m-0">© 2026 {siteConfig.name}</p>
         <Link

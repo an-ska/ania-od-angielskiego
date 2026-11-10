@@ -339,7 +339,7 @@ export default function Home() {
             />
           </svg>
           <div className="relative mx-auto max-w-[760px] text-center">
-            <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
+            <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#4a5c53]">
               Poznaj mnie
             </span>
             <h2 className="mb-7 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
@@ -445,7 +445,7 @@ export default function Home() {
         >
           <div className="relative mx-auto max-w-[1080px]">
             <div className="mb-12 text-center sm:mb-12">
-              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#4a5c53]">
                 Proces i podejście
               </span>
               <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
@@ -516,7 +516,7 @@ export default function Home() {
               <h2 className="font-display text-[clamp(2rem,4vw,2.625rem)] font-bold tracking-tight text-[#263830]">
                 Opinie o korepetycjach z angielskiego
               </h2>
-              <p className="mt-3 text-base font-semibold text-[#d9785a] sm:text-[1.0625rem]">
+              <p className="mt-3 text-base font-semibold text-[#984228] sm:text-[1.0625rem]">
                 14 opinii · 5/5
               </p>
             </div>
@@ -545,7 +545,7 @@ export default function Home() {
         >
           <div className="relative mx-auto max-w-[1120px]">
             <div className="mb-12 text-center">
-              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#6a8275]">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#4a5c53]">
                 Formy współpracy
               </span>
               <h2 className="mb-3 font-display text-[clamp(1.875rem,4vw,2.375rem)] font-extrabold tracking-tight text-[#1a2621]">
@@ -578,7 +578,7 @@ export default function Home() {
                     <h3 className="mb-2 font-display text-[22px] font-bold leading-snug text-[#1a2621]">
                       {plan.title}
                     </h3>
-                    <p className="mb-6 text-sm leading-normal text-[#6a8275]">
+                    <p className="mb-6 text-sm leading-normal text-[#4a5c53]">
                       {plan.description}
                     </p>
 
@@ -592,7 +592,7 @@ export default function Home() {
                           <span className="block text-[40px] font-extrabold leading-none text-[#1a2621]">
                             {"price" in plan ? plan.price : null}
                           </span>
-                          <span className="text-[13px] font-semibold text-[#6a8275]">
+                          <span className="text-[13px] font-semibold text-[#4a5c53]">
                             {"period" in plan ? plan.period : null}
                           </span>
                           {"extraRate" in plan && plan.extraRate ? (
@@ -626,7 +626,7 @@ export default function Home() {
                                 <span className="block text-lg font-extrabold leading-none text-[#1a2621]">
                                   {plan.extraRate.price}
                                 </span>
-                                <span className="text-[12px] font-semibold text-[#6a8275]">
+                                <span className="text-[12px] font-semibold text-[#4a5c53]">
                                   {plan.extraRate.period}
                                 </span>
                               </span>
@@ -852,7 +852,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#fcf9f2] px-5 pb-8 pt-16 text-center text-sm text-[#6a8275] sm:pt-20">
+      <footer className="bg-[#fcf9f2] px-5 pb-8 pt-16 text-center text-sm text-[#4a5c53] sm:pt-20">
         <p className="m-0">© 2026 Ania od angielskiego</p>
         {contact.email.ready ? (
           <a

@@ -135,7 +135,7 @@ export function OfferGrid({ items }: OfferGridProps) {
                     {item.title}
                   </h3>
                   {item.subtitle ? (
-                    <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] sm:text-[1.0625rem]">
+                    <p className="mt-2 text-base font-semibold leading-snug text-[#b44e2f] sm:text-[1.0625rem]">
                       {item.subtitle}
                     </p>
                   ) : null}
@@ -180,7 +180,7 @@ export function OfferGrid({ items }: OfferGridProps) {
                 {item.title}
               </h3>
               {item.subtitle ? (
-                <p className="mt-2 text-base font-semibold leading-snug text-[#d9785a] max-sm:text-center sm:text-[1.0625rem]">
+                <p className="mt-2 text-base font-semibold leading-snug text-[#b44e2f] max-sm:text-center sm:text-[1.0625rem]">
                   {item.subtitle}
                 </p>
               ) : null}
