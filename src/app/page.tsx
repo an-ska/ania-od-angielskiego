@@ -15,28 +15,30 @@ export const metadata: Metadata = {
 
 const offerItems: OfferItem[] = [
   {
-    title: "Angielski szkolny",
-    subtitle: "Bieżąca nauka i nadrabianie zaległości",
+    title: "Angielski w IT",
+    subtitle: "Przygotowanie do rozmów rekrutacyjnych i swobodna komunikacja w projektach",
     description:
-      "Pomagam uporządkować materiał, zrozumieć gramatykę i nadrobić zaległości. Pracujemy nad tym, co sprawia trudność i przygotowujemy się do sprawdzianów.",
-    audience: "Dla uczniów, którzy potrzebują regularnego wsparcia w nauce.",
-    graphic: "/offer-school.png?v=soft",
-    audiences: ["youth"],
+      "Czujesz, że Twój angielski zardzewiał, bo w projektach pracowałeś głównie z polskimi zespołami lub polskim klientem? Szukasz nowej pracy? Mówisz po angielsku, ale brakuje Ci swobody? Przygotuj się do rozmowy rekrutacyjnej albo na spotkania w międzynarodowym gronie.",
+    audience:
+      "Dla specjalistów IT potrzebujących językowego odświeżenia przed rozmową rekrutacyjną lub spotkaniami z zespołem.",
+    graphic: "/offer-it.png?v=raw",
+    audiences: ["adults"],
+    moreHref: siteConfig.paths.angielskiWIt,
+    moreLabel: "Więcej o angielskim w IT",
   },
   {
-    title: "Angielski od pierwszych kroków",
-    subtitle: "Nauka od podstaw lub powrót do języka",
+    title: "Wstępna weryfikacja językowa w IT",
+    subtitle: "Szybkie sprawdzenie poziomu angielskiego kandydata",
     description:
-      "Zaczynamy od tego, co już wiesz, i spokojnie budujemy kolejne umiejętności. Poznajemy przydatne słownictwo, uczymy się tworzyć zdania i oswajamy z mówieniem.",
+      "Szukasz specjalisty do projektu, ale chcesz mieć pewność, że jego angielski faktycznie pozwoli mu na swobodną komunikację? Przeprowadzę szybką, wstępną weryfikację, oszczędzając czas Twojego zespołu.",
     audience:
-      "Dla początkujących, osób wracających do nauki i dorosłych, którzy chcą zacząć od podstaw.",
-    graphic: "/offer-first-steps.png?v=flush",
-    largeGraphic: true,
-    audiences: ["adults"],
+      "Dla firm i rekruterów IT, którzy chcą sprawdzić realne umiejętności językowe kandydata przed rozmową techniczną.",
+    graphic: "/offer-verification.png?v=2",
+    audiences: ["business"],
   },
   {
     title: "Egzamin ósmoklasisty i matura podstawowa",
-    subtitle: "Powtórka, arkusze i strategia na dzień egzaminu",
+    subtitle: "Klucz CKE, pewność siebie i bezstresowa powtórka do majowego egzaminu",
     description:
       "Powtarzamy najważniejsze zagadnienia, rozwiązujemy zadania egzaminacyjne i ćwiczymy strategie, które pomagają lepiej wykorzystać wiedzę podczas egzaminu. Skupiamy się na słabszych obszarach i regularnie sprawdzamy postępy.",
     audience:
@@ -55,8 +57,17 @@ const offerItems: OfferItem[] = [
     ],
   },
   {
-    title: "Angielski w praktyce",
-    subtitle: "Język przydatny w prawdziwym życiu",
+    title: "Angielski szkolny",
+    subtitle: "Bieżąca nauka i nadrabianie zaległości",
+    description:
+      "Pomagam uporządkować materiał, zrozumieć gramatykę i bezboleśnie nadrobić szkolne zaległości. Pracujemy nad tym, co sprawia trudność i przygotowujemy się do sprawdzianów.",
+    audience: "Dla uczniów, którzy potrzebują regularnego wsparcia w nauce.",
+    graphic: "/offer-school.png?v=soft",
+    audiences: ["youth"],
+  },
+  {
+    title: "Angielski w praktyce i konwersacje",
+    subtitle: "Przełamywanie bariery i swobodne rozmowy w codziennych sytuacjach",
     description:
       "Chcesz poradzić sobie na lotnisku, zameldować się w hotelu, zamówić jedzenie lub swobodniej rozmawiać z innymi? Ćwiczymy konkretne sytuacje, przydatne zwroty i dialogi, które pomagają przełamać barierę językową.",
     audience:
@@ -65,26 +76,15 @@ const offerItems: OfferItem[] = [
     audiences: ["adults"],
   },
   {
-    title: "Angielski w IT",
-    subtitle: "Przygotowanie do rozmów i swobodna komunikacja w projektach",
+    title: "Angielski od pierwszych kroków",
+    subtitle: "Spokojna nauka od podstaw lub powrót do języka",
     description:
-      "Czujesz, że Twój angielski zardzewiał, bo w projektach pracowałeś głównie z polskimi zespołami lub polskim klientem? Mówisz po angielsku, ale brakuje Ci swobody? Przygotuj się do rozmowy rekrutacyjnej albo na spotkania w międzynarodowym gronie.",
+      "Zaczynamy od tego, co już wiesz, i spokojnie budujemy kolejne umiejętności. Poznajemy przydatne słownictwo, uczymy się tworzyć zdania i oswajamy z mówieniem.",
     audience:
-      "Dla specjalistów IT potrzebujących językowego odświeżenia przed rozmową rekrutacyjną lub spotkaniami z zespołem.",
-    graphic: "/offer-it.png?v=raw",
+      "Dla początkujących, osób wracających do nauki i dorosłych, którzy chcą zacząć od podstaw.",
+    graphic: "/offer-first-steps.png?v=flush",
+    largeGraphic: true,
     audiences: ["adults"],
-    moreHref: siteConfig.paths.angielskiWIt,
-    moreLabel: "Więcej o angielskim w IT",
-  },
-  {
-    title: "Wstępna weryfikacja językowa w IT",
-    subtitle: "Szybkie sprawdzenie poziomu angielskiego kandydata",
-    description:
-      "Szukasz specjalisty do projektu, ale chcesz mieć pewność, że jego angielski faktycznie pozwoli mu na swobodną komunikację? Przeprowadzę szybką, wstępną weryfikację, oszczędzając czas Twojego zespołu.",
-    audience:
-      "Dla firm i rekruterów technicznych, którzy chcą sprawdzić realne umiejętności językowe kandydata przed rozmową techniczną.",
-    graphic: "/offer-verification.png?v=2",
-    audiences: ["business"],
   },
   {
     title: "Angielski z ciekawości",
