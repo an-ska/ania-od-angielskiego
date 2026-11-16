@@ -199,7 +199,7 @@ export default function EgzaminOsmoklasistyPage() {
           <SectionWave color={cream} position="top" />
           <div className="relative mx-auto max-w-[720px] text-center">
             <h2 className="mb-5 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Dla kogo są te korepetycje
+              Dla kogo są te korepetycje?
             </h2>
             <div className="space-y-4 text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
               <p>
@@ -333,7 +333,7 @@ export default function EgzaminOsmoklasistyPage() {
         <section className="relative overflow-visible bg-[#fcf9f2] px-5 py-16 text-center text-[#2b3a32] sm:px-6 sm:py-[90px]">
           <div className="relative mx-auto max-w-[560px]">
             <h2 className="mb-4 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Porozmawiajmy o ósmoklaście
+              Porozmawiajmy o egzaminie ósmoklasisty
             </h2>
             <p className="mb-8 text-base leading-relaxed text-[#4a5c53] sm:text-[17px]">
               Napisz, czy uczeń jest w 7., czy w 8. klasie i kiedy egzamin.
