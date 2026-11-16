@@ -199,7 +199,7 @@ export default function MaturaPodstawowaPage() {
           <SectionWave color={cream} position="top" />
           <div className="relative mx-auto max-w-[720px] text-center">
             <h2 className="mb-5 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Dla kogo są te korepetycje
+              Dla kogo są te korepetycje?
             </h2>
             <div className="space-y-4 text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
               <p>

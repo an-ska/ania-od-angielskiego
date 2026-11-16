@@ -36,35 +36,58 @@ export const metadata: Metadata = {
 
 const focusItems = [
   {
-    title: "Rozmowa rekrutacyjna",
-    text: "Ćwiczymy opowiadanie o doświadczeniu, pytania o projekty i naturalne odpowiedzi pod presją czasu. Chodzi o to, żebyś mówił swobodniej, a nie wykuwał sztywne skrypty.",
+    title: "Rozmowa rekrutacyjna i mock interview",
+    text: "Przeprowadzimy symulacje prawdziwych rozmów. Przejdziemy przez standardowe pytania rekrutacyjne takie jak m.in. opowiadanie o doświadczeniu, mocnych i słabych stronach, wyzwaniach i oczekiwaniach. Podczas zajęć odświeżysz język i nauczysz się mówić o swoich kompetencjach swobodnie i pewnie.",
   },
   {
-    title: "Spotkania i codzienny projekt",
-    text: "Standupy, planningi, demo, review, spotkania typu hands up, rozmowy z klientem albo zespołem za granicą. Trenujemy zwroty, które realnie padają na callach, wyrażanie swoich myśli i to, jak dopytać, gdy czegoś nie dosłyszysz.",
+    title: "Spotkania i dyskusje w projekcie",
+    text: "Codzienne statusy, planowanie sprintów, podsumowania, demo czy rozmowy z klientem. Bierzemy na warsztat sytuacje z Twojego projektu: ćwiczymy przydatne na spotkaniach zwroty, zręczny small talk, precyzyjne przekazywanie pomysłów, skuteczną argumentację i swobodną wymianę zdań.",
   },
   {
-    title: "Odświeżenie po „polskim IT”",
-    text: "Jeśli długo pracowałeś głównie po polsku, angielski mógł zardzewieć mimo solidnych podstaw. Wracamy do mówienia małymi, regularnymi krokami, bez szkolnej atmosfery.",
+    title: "Odświeżenie po polskim IT",
+    text: "Wyciągamy Twój angielski z wieloletniej bańki polskojęzycznych zespołów. Stawiamy na praktykę – od pierwszej lekcji rozwijamy swobodę wypowiadania się, odświeżamy zapomniane słownictwo i uczymy, jak radzić sobie w różnych sytuacjach zawodowych w IT. Krok po kroku odzyskujesz płynność, pewność siebie i przełamujesz barierę językową.",
   },
   {
-    title: "Feedback pod Twój kontekst",
-    text: "Jestem też programistką frontend, więc łatwiej mi złapać, o czym mówisz w pracy. Na lekcji skupiamy się na angielskim, a nie na tłumaczeniu technologii.",
+    title: "Pełna elastyczność i Twój rytm",
+    text: "Nie pracujemy według sztywnego programu z podręcznika. Dopasowuję tempo i tematykę zajęć do tego, co w danym momencie jest dla Ciebie priorytetem w pracy.",
+  },
+] as const;
+
+const audienceScenarios = [
+  {
+    title: "Spotkania i bieżąca praca",
+    text: "Przez długi czas nie używałeś angielskiego w praktyce, a teraz czeka Cię przejście do międzynarodowego projektu? Na co dzień radzisz sobie z dokumentacją techniczną i rozmowami na firmowym czacie, ale kiedy wchodzą spotkania na żywo, pojawia się stres, blokada i ciągłe szukanie odpowiednich słów? Ciężko Ci przeprowadzić small talk, wyrazić swoje myśli czy przedstawić i obronić argumenty? Te lekcje są dla Ciebie!",
+  },
+  {
+    title: "Rekrutacja i zmiana pracy",
+    text: "Przez lata pracowałeś w polskojęzycznych zespołach, a teraz czeka Cię rekrutacja po angielsku? Wiesz, że masz odpowiednie doświadczenie i kompetencje, ale zastanawiasz się, jak opowiedzieć o nich w obcym języku? Trudność sprawia Ci przedstawienie swoich projektów i opisanie codziennych obowiązków? A może obawiasz się niespodziewanych pytań i tego, że stres odbierze Ci płynność wypowiedzi? Te lekcje są dla Ciebie!",
   },
 ] as const;
 
 const faqItems = [
   {
-    q: "Dla kogo jest angielski w IT?",
-    a: "Dla specjalistów IT, którzy chcą pewniej mówić na rekrutacji albo w międzynarodowym zespole. Pasuje też, gdy „dasz radę napisać maila”, ale na spotkaniu brakuje płynności.",
+    q: "Czy uczysz tylko programistów?",
+    a: "Nie tylko! Zajęcia są skierowane do osób pracujących w różnych obszarach IT – programistów, testerów, analityków, UX designerów, project managerów, project ownerów i innych specjalistów, którzy wykorzystują angielski w pracy.",
   },
   {
-    q: "Czy muszę znać angielski techniczny na wysokim poziomie?",
-    a: "Nie. Ważniejsze jest swobodne tłumaczenie myśli i udział w rozmowie. Słownictwo techniczne dokładamy pod Twoje projekty, nie uczymy słownika na pamięć.",
+    q: "Czy muszę znać specjalistyczne słownictwo techniczne?",
+    a: "Nie musisz znać go na pamięć. Skupiamy się przede wszystkim na komunikacji, a słownictwo techniczne poznajemy i utrwalamy w kontekście Twojej pracy, projektów i obowiązków.",
   },
   {
-    q: "Ile kosztuje lekcja?",
-    a: "Angielski w IT to 180 zł za 60 minut online. Jeśli potrzebujesz raczej ogólnego angielskiego albo matury, na stronie głównej są też inne stawki.",
+    q: "Jak wyglądają zajęcia i czy dostanę materiały?",
+    a: "Zajęcia odbywają się online i mają przede wszystkim praktyczny charakter. Korzystamy z autentycznych sytuacji z branży IT, artykułów, materiałów i ćwiczeń dopasowanych do Twoich potrzeb. Nie realizujemy sztywnego programu z podręcznika – to, nad czym pracujemy, zależy od Twoich celów.",
+  },
+  {
+    q: "Czy muszę przygotowywać się do zajęć lub odrabiać prace domowe?",
+    a: "Nie zakładam obowiązkowych prac domowych. Jeśli chcesz dodatkowo pracować między lekcjami, mogę zaproponować Ci krótkie ćwiczenia, materiały do powtórki lub zadania związane z tematami, które omawiamy na zajęciach.",
+  },
+  {
+    q: "Czy zajęcia odbywają się online?",
+    a: "Tak! Wszystkie zajęcia prowadzę online, dzięki czemu możesz uczyć się z dowolnego miejsca i bez tracenia czasu na dojazdy. Jeśli mieszkasz w okolicach Rybnika, możemy jednak indywidualnie ustalić możliwość spotkań stacjonarnych.",
+  },
+  {
+    q: "Czy pierwsza lekcja jest bezpłatna?",
+    a: "Nie, pierwsze spotkanie jest płatne. Od początku pracujemy nad Twoimi celami językowymi – poznajemy się, określamy potrzeby i ustalamy plan działania.",
   },
 ] as const;
 
@@ -145,15 +168,7 @@ export default function AngielskiWItPage() {
       <ItJsonLd />
       <SiteHeader />
       <main>
-        <section
-          className="relative overflow-hidden pt-[5.5rem] text-[#2b3a32] sm:pt-32 lg:pt-36"
-          style={{
-            backgroundColor: lavender,
-            backgroundImage:
-              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
-            backgroundSize: "15px 15px",
-          }}
-        >
+        <section className="relative overflow-hidden bg-[#fcf9f2] pt-[5.5rem] text-[#2b3a32] sm:pt-32 lg:pt-36">
           <div className="relative mx-auto max-w-[760px] px-5 pb-14 pt-2 text-center sm:px-6 sm:pb-20 md:pt-4">
             <p className="mb-3 text-sm font-medium text-[#5c4a6e]">
               <Link
@@ -174,9 +189,9 @@ export default function AngielskiWItPage() {
               Angielski w IT online
             </h1>
             <p className="mx-auto mb-8 max-w-[40rem] text-[1.05rem] leading-[1.65] text-[#4a5c53] md:text-[1.15rem]">
-              Korepetycje dla osób z IT, które chcą pewniej mówić na rekrutacji i
-              na spotkaniach: mniej kalkowania, więcej swobody w prawdziwych
-              sytuacjach z pracy.
+              Dla programistów, testerów, PM-ów i specjalistów IT, którzy chcą
+              pewniej mówić na rekrutacji i spotkaniach: mniej kalkowania,
+              więcej swobody w prawdziwych sytuacjach z pracy.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
@@ -195,28 +210,87 @@ export default function AngielskiWItPage() {
           </div>
         </section>
 
+        <section
+          className="relative overflow-visible px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]"
+          style={{
+            backgroundColor: lavender,
+            backgroundImage:
+              "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+            backgroundSize: "15px 15px",
+          }}
+        >
+          <SectionWave color={lavender} position="top" />
+          <div className="relative mx-auto max-w-[960px]">
+            <div className="mb-10 text-center sm:mb-12">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
+                Z czym przychodzisz?
+              </span>
+              <h2 className="font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
+                Dla kogo są te korepetycje?
+              </h2>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {audienceScenarios.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-[20px] border border-black/[0.03] bg-white px-6 py-7 shadow-[0_10px_30px_rgba(43,58,50,0.05)]"
+                >
+                  <h3 className="mb-3 font-display text-xl font-bold text-[#1a2621]">
+                    {item.title}
+                  </h3>
+                  <p className="m-0 text-[15px] leading-[1.65] text-[#4a5c53]">
+                    {item.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="relative overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]">
           <SectionWave color={cream} position="top" />
-          <div className="relative mx-auto max-w-[720px] text-center">
-            <h2 className="mb-5 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Dla kogo są te korepetycje
-            </h2>
-            <div className="space-y-4 text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
-              <p>
-                Dla programistów, testerów, PM-ów, analityków i innych osób z IT,
-                które potrzebują angielskiego do pracy, a nie kolejnego kursu
-                „ogólnego A2–B1”.
-              </p>
-              <p>
-                Częsty start: solidne podstawy albo angielski „z filmu”, ale na
-                callu brakuje płynności. Albo zbliża się rozmowa rekrutacyjna i
-                chcesz przećwiczyć konkretne sytuacje, zanim wejdziesz na spotkanie.
-              </p>
-              <p>
-                Zajęcia są online. Prowadzę je jako magister filologii angielskiej
-                i programistka frontend, więc łączę język z realiami pracy w IT.
-              </p>
+          <div className="relative mx-auto max-w-[720px]">
+            <div className="mb-8 text-center sm:mb-10">
+              <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
+                Dlaczego warto mi zaufać?
+              </span>
+              <h2 className="font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
+                Magister filologii angielskiej i programistka frontend
+              </h2>
             </div>
+            <p className="mb-6 text-center text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
+              Mam tytuł magistra filologii angielskiej, 10 lat doświadczenia w
+              nauczaniu i 8 lat pracy jako programistka frontend. Łączę wiedzę o
+              nauczaniu języka z praktycznym doświadczeniem w branży
+              technologicznej. Dzięki temu wiem nie tylko, jak uczyć
+              angielskiego, ale też jakiego angielskiego naprawdę potrzebujesz w
+              pracy.
+            </p>
+            <ul className="flex flex-wrap justify-center gap-3.5">
+              {(
+                [
+                  {
+                    label: "magister filologii angielskiej",
+                    className: "bg-[#e8e1f0] -rotate-[1.5deg]",
+                  },
+                  {
+                    label: "+10 lat doświadczenia w nauczaniu angielskiego",
+                    className: "bg-[#e2ede7] rotate-[1deg]",
+                  },
+                  {
+                    label: "+8 lat pracy w roli frontend developera",
+                    className: "bg-[#f7e6e3] -rotate-[0.8deg]",
+                  },
+                ] as const
+              ).map((item) => (
+                <li
+                  key={item.label}
+                  className={`inline-block rounded-[25px] border border-black/5 px-[22px] py-2.5 text-sm font-semibold text-[#2b3a32] shadow-[0_4px_10px_rgba(0,0,0,0.05),0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-250 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] hover:translate-y-[-3px] hover:rotate-0 hover:scale-[1.03] hover:shadow-[0_8px_18px_rgba(0,0,0,0.1)] ${item.className}`}
+                >
+                  {item.label}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -234,17 +308,17 @@ export default function AngielskiWItPage() {
           <div className="relative mx-auto max-w-[960px]">
             <div className="mb-10 text-center sm:mb-12">
               <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
-                Proces
+                Oferta
               </span>
               <h2 className="font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-                Nad czym pracujemy na angielskim w IT
+                Nad czym pracujemy na angielskim w IT?
               </h2>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               {focusItems.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-[20px] border border-black/[0.03] bg-[#fcf9f2] px-6 py-7 shadow-[0_10px_30px_rgba(43,58,50,0.05)]"
+                  className="rounded-[20px] border border-black/[0.03] bg-white px-6 py-7 shadow-[0_10px_30px_rgba(43,58,50,0.05)]"
                 >
                   <h3 className="mb-3 font-display text-xl font-bold text-[#1a2621]">
                     {item.title}
@@ -256,34 +330,42 @@ export default function AngielskiWItPage() {
               ))}
             </div>
           </div>
-          <SectionWave color={lavender} position="bottom" />
         </section>
 
         <section className="relative overflow-visible bg-[#fcf9f2] px-5 py-16 text-[#2b3a32] sm:px-6 sm:py-[90px]">
+          <SectionWave color={cream} position="top" />
           <div className="relative mx-auto max-w-[720px] text-center">
+            <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
+              Ile to kosztuje?
+            </span>
             <h2 className="mb-5 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Cena i formalności
+              Cena
             </h2>
             <div className="space-y-4 text-base leading-[1.75] text-[#4a5c53] sm:text-[17px]">
-              <p>
+              <p className="m-0">
                 <strong className="font-semibold text-[#1a2621]">
                   180 zł / 60 minut
-                </strong>
-                : lekcje online pod angielski w IT. Umawiamy rytm pod Ciebie, bez
-                sztywnych pakietów „na siłę”.
+                </strong>{" "}
+                – pojedyncze lekcje online skrojone pod realia IT.
               </p>
-              <p>
-                Dla firm potrzebujących szybkiego sprawdzenia angielskiego
-                kandydata prowadzę też wstępną weryfikację językową. Szczegóły i
-                pozostałe formy są w{" "}
-                <a
-                  href={`${siteConfig.paths.home}#cennik`}
-                  className="font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 hover:text-[#e07a5f]"
-                >
-                  cenniku na stronie głównej
-                </a>
-                .
-              </p>
+              <div className="pt-8">
+                <h3 className="mb-2 font-display text-xl font-bold text-[#1a2621]">
+                  Opcja dla firm
+                </h3>
+                <p className="m-0">
+                  Prowadzisz rekrutację i potrzebujesz szybkiej weryfikacji
+                  poziomu angielskiego kandydata? Pomagam też firmom w
+                  technicznym audycie językowym.
+                  <br />
+                  <a
+                    href={`${siteConfig.paths.home}#cennik`}
+                    className="font-semibold text-[#3b5249] underline decoration-[#3b5249]/25 underline-offset-2 hover:text-[#e07a5f]"
+                  >
+                    Szczegóły i pozostałe formy współpracy
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -299,14 +381,19 @@ export default function AngielskiWItPage() {
         >
           <SectionWave color={lavender} position="top" />
           <div className="relative mx-auto max-w-[720px]">
-            <h2 className="mb-8 text-center font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-              Pytania o angielski w IT
-            </h2>
+            <div className="mb-8 text-center">
+              <span className="mb-4 inline-block rounded-[20px] bg-[#f4efe6] px-3.5 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
+                FAQ
+              </span>
+              <h2 className="font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
+                Pytania o angielski w IT
+              </h2>
+            </div>
             <div className="space-y-4">
               {faqItems.map((item) => (
                 <div
                   key={item.q}
-                  className="rounded-[20px] border border-white/60 bg-[#fcf9f2] px-6 py-5 shadow-[0_8px_20px_rgba(43,58,50,0.06)]"
+                  className="rounded-[20px] border border-black/[0.03] bg-white px-6 py-5 shadow-[0_8px_20px_rgba(43,58,50,0.06)]"
                 >
                   <h3 className="mb-2 font-display text-lg font-bold text-[#1a2621]">
                     {item.q}
@@ -318,11 +405,14 @@ export default function AngielskiWItPage() {
               ))}
             </div>
           </div>
-          <SectionWave color={lavender} position="bottom" />
         </section>
 
         <section className="relative overflow-visible bg-[#fcf9f2] px-5 py-16 text-center text-[#2b3a32] sm:px-6 sm:py-[90px]">
+          <SectionWave color={cream} position="top" />
           <div className="relative mx-auto max-w-[560px]">
+            <span className="mb-2 block text-[13px] font-semibold uppercase tracking-[2px] text-[#5c4a6e]">
+              Kontakt
+            </span>
             <h2 className="mb-4 font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
               Porozmawiajmy o Twoim angielskim w IT
             </h2>
@@ -348,7 +438,15 @@ export default function AngielskiWItPage() {
         </section>
       </main>
 
-      <footer className="relative overflow-visible bg-[#dcd0e5] px-5 pb-8 pt-16 text-center text-sm text-[#4a5c53] sm:pt-20">
+      <footer
+        className="relative overflow-visible px-5 pb-8 pt-16 text-center text-sm text-[#4a5c53] sm:pt-20"
+        style={{
+          backgroundColor: lavender,
+          backgroundImage:
+            "radial-gradient(#cbb9d8 0.75px, transparent 0.75px)",
+          backgroundSize: "15px 15px",
+        }}
+      >
         <SectionWave color={lavender} position="top" />
         <p className="relative m-0">© 2026 {siteConfig.name}</p>
         <Link
