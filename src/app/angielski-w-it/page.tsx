@@ -75,7 +75,7 @@ const faqItems = [
   },
   {
     q: "Jak wyglądają zajęcia i czy dostanę materiały?",
-    a: "Zajęcia odbywają się online i mają przede wszystkim praktyczny charakter. Korzystamy z autentycznych sytuacji z branży IT, artykułów, materiałów i ćwiczeń dopasowanych do Twoich potrzeb. Nie realizujemy sztywnego programu z podręcznika – to, nad czym pracujemy, zależy od Twoich celów.",
+    a: "Zajęcia mają przede wszystkim praktyczny charakter. Korzystamy z autentycznych sytuacji z branży IT, artykułów, materiałów i ćwiczeń dopasowanych do Twoich potrzeb. Nie realizujemy sztywnego programu z podręcznika - to, nad czym pracujemy, zależy od Twoich celów.",
   },
   {
     q: "Czy muszę przygotowywać się do zajęć lub odrabiać prace domowe?",
