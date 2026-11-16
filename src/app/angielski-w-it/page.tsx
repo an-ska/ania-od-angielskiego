@@ -66,10 +66,6 @@ const audienceScenarios = [
 
 const faqItems = [
   {
-    q: "Czy uczysz tylko programistów?",
-    a: "Nie tylko! Zajęcia są skierowane do osób pracujących w różnych obszarach IT – programistów, testerów, analityków, UX designerów, project managerów, project ownerów i innych specjalistów, którzy wykorzystują angielski w pracy.",
-  },
-  {
     q: "Czy muszę znać specjalistyczne słownictwo techniczne?",
     a: "Nie musisz znać go na pamięć. Skupiamy się przede wszystkim na komunikacji, a słownictwo techniczne poznajemy i utrwalamy w kontekście Twojej pracy, projektów i obowiązków.",
   },
@@ -82,8 +78,8 @@ const faqItems = [
     a: "Nie zakładam obowiązkowych prac domowych. Jeśli chcesz dodatkowo pracować między lekcjami, mogę zaproponować Ci krótkie ćwiczenia, materiały do powtórki lub zadania związane z tematami, które omawiamy na zajęciach.",
   },
   {
-    q: "Czy zajęcia odbywają się online?",
-    a: "Tak! Wszystkie zajęcia prowadzę online, dzięki czemu możesz uczyć się z dowolnego miejsca i bez tracenia czasu na dojazdy. Jeśli mieszkasz w okolicach Rybnika, możemy jednak indywidualnie ustalić możliwość spotkań stacjonarnych.",
+    q: "Czy zajęcia mogą odbywać się stacjonarnie?",
+    a: "Standardowo pracuję online, co oszczędza czas na dojazdy. Jeśli jednak mieszkasz w okolicach Rybnika i wolisz spotkania twarzą w twarz, możemy indywidualnie ustalić opcję stacjonarną.",
   },
   {
     q: "Czy pierwsza lekcja jest bezpłatna?",
@@ -189,7 +185,7 @@ export default function AngielskiWItPage() {
               Angielski w IT online
             </h1>
             <p className="mx-auto mb-8 max-w-[40rem] text-[1.05rem] leading-[1.65] text-[#4a5c53] md:text-[1.15rem]">
-              Dla programistów, testerów, PM-ów i specjalistów IT, którzy chcą
+              Dla programistów, testerów, PM-ów i innych specjalistów IT, którzy chcą
               pewniej mówić na rekrutacji i spotkaniach: mniej kalkowania,
               więcej swobody w prawdziwych sytuacjach z pracy.
             </p>
