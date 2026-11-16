@@ -183,7 +183,7 @@ export default function AngielskiWItPage() {
               Angielski w IT
             </p>
             <span className="mb-4 inline-block rounded-[20px] bg-[#f4efe6] px-3.5 py-1.5 text-sm font-medium text-[#3b5249] shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
-              Korepetycje online, 180 zł / 60 min
+              Lekcje online, 180 zł / 60 min
             </span>
             <h1 className="mb-4 font-display text-[clamp(2rem,6vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-[#263830]">
               Angielski w IT online
@@ -226,7 +226,7 @@ export default function AngielskiWItPage() {
                 Z czym przychodzisz?
               </span>
               <h2 className="font-display text-[clamp(1.75rem,4vw,2.25rem)] font-extrabold tracking-tight text-[#1a2621]">
-                Dla kogo są te korepetycje?
+                Dla kogo są te lekcje?
               </h2>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
